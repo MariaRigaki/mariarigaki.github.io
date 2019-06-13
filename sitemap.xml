@@ -3,22 +3,88 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://mariarigaki.github.io/authors/admin/</loc>
-  </url>
-  
-  <url>
     <loc>https://mariarigaki.github.io/authors/</loc>
+    <lastmod>2018-05-23T11:56:27+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
+    <loc>https://mariarigaki.github.io/publication/gan-knife-fight/</loc>
+    <lastmod>2018-05-23T11:56:27+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://mariarigaki.github.io/categories/</loc>
+    <lastmod>2018-05-23T11:56:27+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://mariarigaki.github.io/tags/gan/</loc>
+    <lastmod>2018-05-23T11:56:27+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://mariarigaki.github.io/authors/maria-rigaki/</loc>
+    <lastmod>2018-05-23T11:56:27+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://mariarigaki.github.io/</loc>
+    <lastmod>2018-05-23T11:56:27+02:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://mariarigaki.github.io/publication/</loc>
+    <lastmod>2018-05-23T11:56:27+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mariarigaki.github.io/authors/sebastian-garcia/</loc>
+    <lastmod>2018-05-23T11:56:27+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://mariarigaki.github.io/tags/</loc>
+    <lastmod>2018-05-23T11:56:27+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://mariarigaki.github.io/categories/conference-paper/</loc>
+    <lastmod>2018-05-23T11:56:27+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://mariarigaki.github.io/tags/intrusion-detection/</loc>
+    <lastmod>2018-05-23T11:56:27+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://mariarigaki.github.io/publication/master-thesis/</loc>
+    <lastmod>2017-07-06T11:43:05+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mariarigaki.github.io/tags/adversarial-ml/</loc>
+    <lastmod>2017-07-06T11:43:05+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://mariarigaki.github.io/categories/thesis/</loc>
+    <lastmod>2017-07-06T11:43:05+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://mariarigaki.github.io/authors/admin/</loc>
   </url>
   
   <url>
@@ -31,16 +97,7 @@
   </url>
   
   <url>
-    <loc>https://mariarigaki.github.io/publication/</loc>
-  </url>
-  
-  <url>
     <loc>https://mariarigaki.github.io/talk/</loc>
-  </url>
-  
-  <url>
-    <loc>https://mariarigaki.github.io/tags/</loc>
-    <priority>0</priority>
   </url>
   
 </urlset>
