@@ -6,10 +6,19 @@
     <description>Recent content in Sebastian Garcia on Maria Rigaki</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 23 May 2018 11:56:27 +0200</lastBuildDate>
+    <lastBuildDate>Thu, 20 Jun 2019 11:56:27 +0200</lastBuildDate>
     
 	    <atom:link href="https://mariarigaki.github.io/authors/sebastian-garcia/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Machete: Dissecting the Operations of a Cyber Espionage Group in Latin America</title>
+      <link>https://mariarigaki.github.io/publication/machete/</link>
+      <pubDate>Thu, 20 Jun 2019 11:56:27 +0200</pubDate>
+      
+      <guid>https://mariarigaki.github.io/publication/machete/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Bringing a GAN to a Knife-fight: Adapting Malware Communication to Avoid Detection</title>
