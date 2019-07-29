@@ -12,14 +12,12 @@
     
     
     <item>
-      <title>Scope it out!</title>
+      <title>Scoping it out!</title>
       <link>https://mariarigaki.github.io/post/summer-hacakathon-2019/</link>
       <pubDate>Mon, 29 Jul 2019 13:16:05 +0200</pubDate>
       
       <guid>https://mariarigaki.github.io/post/summer-hacakathon-2019/</guid>
       <description>
-
-&lt;h1 id=&#34;scoping-it-out&#34;&gt;Scoping it out!&lt;/h1&gt;
 
 &lt;p&gt;&lt;strong&gt;TL;DR Using a Picoscope 2204A and its SDK to perform  timing side channel attacks against a weak password checker implementation running in an Arduino. Code, screenshots and lessons learned!&lt;/strong&gt;&lt;/p&gt;
 
