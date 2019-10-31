@@ -6,10 +6,19 @@
     <description>Recent content in Sebastian Garcia on Maria Rigaki</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 04 Oct 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 31 Oct 2019 20:05:32 +0100</lastBuildDate>
     
 	    <atom:link href="https://mariarigaki.github.io/authors/sebastian-garcia/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Forget me not: Malware Classification as a Continual Learning Problem</title>
+      <link>https://mariarigaki.github.io/talk/cybersecai/</link>
+      <pubDate>Thu, 31 Oct 2019 20:05:32 +0100</pubDate>
+      
+      <guid>https://mariarigaki.github.io/talk/cybersecai/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Virus Bulletin 2019</title>
