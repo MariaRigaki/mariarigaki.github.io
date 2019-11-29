@@ -6,10 +6,107 @@
     <description>Recent content on Maria Rigaki</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 31 Oct 2019 20:05:32 +0100</lastBuildDate>
+    <lastBuildDate>Fri, 29 Nov 2019 20:17:04 +0100</lastBuildDate>
     
 	    <atom:link href="https://mariarigaki.github.io/authors/maria-rigaki/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Changing Weights and Biases Programmatically for “Neural Network Hacking” and more</title>
+      <link>https://mariarigaki.github.io/post/hacking-nn-programmatically/</link>
+      <pubDate>Fri, 29 Nov 2019 20:17:04 +0100</pubDate>
+      
+      <guid>https://mariarigaki.github.io/post/hacking-nn-programmatically/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;TL;DR Using Tensorflow / Keras APIs to read and change Neural Network parameters.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;A few days ago I came across a paper called &lt;a href=&#34;https://arxiv.org/pdf/1911.07658.pdf&#34;&gt;“Hacking Neural Networks”&lt;/a&gt; by Michael Kissner aka &lt;a href=&#34;https://twitter.com/Spellwrath&#34;&gt;@Spellwrath&lt;/a&gt;. It is a beautiful introduction to attacks against neural networks, very approachable and fun to read. What I liked most is that it comes together with a Github repository and some exercises to try the different attacks: &lt;a href=&#34;https://github.com/Kayzaks/HackingNeuralNetworks&#34;&gt;https://github.com/Kayzaks/HackingNeuralNetworks&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;The first chapter introduces a simple attack where the main idea is that we want to cause a neural network to misclassify an image by just changing some part of the model. The assumption here is that we have access to the model file and we can change it arbitrarily. The model is saved in the HDF5 format (“model.h5”).  The proposed solution and probably the most straightforward thing to do is to load the model using a tool such as HDFView that can edit the file and change it manually. But what if we want to do this programmatically?&lt;/p&gt;
+&lt;p&gt;Tensorflow and keras provide this possibility, however, the documentation is not the easiest to navigate. Here is how you could solve the exercises 0-0 and 0-1 programmatically. Note, that the code below works for Tensorflow v.2.0.&lt;/p&gt;
+&lt;p&gt;First, the necessary imports:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; tensorflow &lt;span style=&#34;color:#f92672&#34;&gt;as&lt;/span&gt; tf
+&lt;span style=&#34;color:#f92672&#34;&gt;from&lt;/span&gt; tensorflow &lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; keras
+&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; numpy &lt;span style=&#34;color:#f92672&#34;&gt;as&lt;/span&gt; np
+&lt;span style=&#34;color:#f92672&#34;&gt;from&lt;/span&gt; skimage &lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; io
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;This part of the code is provided in the exercise code:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Load the Image File with skimage.&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;# (&amp;#39;imread&amp;#39; was deprecated in SciPy 1.0.0, and will be removed in 1.2.0.)&lt;/span&gt;
+image &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; io&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;imread(&lt;span style=&#34;color:#e6db74&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;./fake_id.png&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;&lt;/span&gt;)
+processedImage &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; np&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;zeros([&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;28&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;28&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;])
+&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; yy &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; range(&lt;span style=&#34;color:#ae81ff&#34;&gt;28&lt;/span&gt;):
+   &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; xx &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; range(&lt;span style=&#34;color:#ae81ff&#34;&gt;28&lt;/span&gt;):
+       processedImage[&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;][xx][yy][&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; float(image[xx][yy]) &lt;span style=&#34;color:#f92672&#34;&gt;/&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;255&lt;/span&gt;
+ 
+&lt;span style=&#34;color:#75715e&#34;&gt;# Load the Model&lt;/span&gt;
+model &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; keras&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;models&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;load_model(&lt;span style=&#34;color:#e6db74&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;./model.h5&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;&lt;/span&gt;)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The first exercise is asking us to answer a few basic questions and the first one is “What does the architecture look like?” We can get this information by simply calling &lt;code&gt;model.summary()&lt;/code&gt;:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Answer to Q1&lt;/span&gt;
+model&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;summary()
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;which provides the following print out:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-Model:&#34; data-lang=&#34;Model:&#34;&gt;_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+conv2d_1 (Conv2D)            (None, 26, 26, 32)        320       
+_________________________________________________________________
+conv2d_2 (Conv2D)            (None, 24, 24, 64)        18496     
+_________________________________________________________________
+max_pooling2d_1 (MaxPooling2 (None, 12, 12, 64)        0         
+_________________________________________________________________
+dropout_1 (Dropout)          (None, 12, 12, 64)        0         
+_________________________________________________________________
+flatten_1 (Flatten)          (None, 9216)              0         
+_________________________________________________________________
+dense_1 (Dense)              (None, 128)               1179776   
+_________________________________________________________________
+dropout_2 (Dropout)          (None, 128)               0         
+_________________________________________________________________
+dense_2 (Dense)              (None, 10)                1290      
+=================================================================
+Total params: 1,199,882
+Trainable params: 1,199,882
+Non-trainable params: 0
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;The second question is “What was the model trained with?” and it refers to the optimizer that was used. This can also be easily retrieved using the model.optimizer variable:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Answer to Q2&lt;/span&gt;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;print&lt;/span&gt;(model&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;optimizer&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;get_config())
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;which prints the following output:
+&lt;code&gt;{&#39;name&#39;: &#39;Adadelta&#39;, &#39;learning_rate&#39;: 1.0, &#39;decay&#39;: 0.0, &#39;rho&#39;: 0.95, &#39;epsilon&#39;: 1e-07}&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;According to the printout the optimizer used is Adadelta and we can also see the initial configuration values set.&lt;/p&gt;
+&lt;p&gt;The second exercise asks us to cause misclassification of a specific image given as input. The input is an image of the digit “2” but only an image of digit “4” grants access to a hypothetical system. We need to get the neural network to grant us access without changing the image. The proposed way is to try and change manually the biases at the last layer of the model using a tool. But we can also do this programmatically.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Get all the trainable variables and their values&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;# Feel free to print the tvars variable to see all of them&lt;/span&gt;
+tvars &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; model&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;trainable_variables
+ 
+&lt;span style=&#34;color:#75715e&#34;&gt;# The biases we want to change are the last item in the list&lt;/span&gt;
+bias &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; tvars[&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;]
+&lt;span style=&#34;color:#66d9ef&#34;&gt;print&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;Values before the change:&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;, bias)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Print output:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;Values before the change: &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt;tf&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;Variable &lt;span style=&#34;color:#e6db74&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;dense_2/bias:0&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;&lt;/span&gt; shape&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;(&lt;span style=&#34;color:#ae81ff&#34;&gt;10&lt;/span&gt;,) &lt;span style=&#34;color:#75715e&#34;&gt;#dtype=float32, numpy=&lt;/span&gt;
+array([&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;0.03398215&lt;/span&gt;,  &lt;span style=&#34;color:#ae81ff&#34;&gt;0.15133834&lt;/span&gt;, &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;0.04235273&lt;/span&gt;, &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;0.03443589&lt;/span&gt;, &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;0.03148068&lt;/span&gt;,
+       &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;0.03133481&lt;/span&gt;, &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;0.14359292&lt;/span&gt;, &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;0.04240401&lt;/span&gt;,  &lt;span style=&#34;color:#ae81ff&#34;&gt;0.01841561&lt;/span&gt;,  &lt;span style=&#34;color:#ae81ff&#34;&gt;0.0588899&lt;/span&gt; ],
+      dtype&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;float32)&lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;And now we cChange the value of the bias for number 4 to a large value&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;bias[&lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt;]&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;assign(&lt;span style=&#34;color:#ae81ff&#34;&gt;100.&lt;/span&gt;)
+&lt;span style=&#34;color:#66d9ef&#34;&gt;print&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;Values after the change:&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;, bias)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre&gt;&lt;code&gt;Values after the change: &amp;lt;tf.Variable &#39;dense_2/bias:0&#39; shape=(10,) dtype=float32, numpy=
+array([-3.3982150e-02,  1.5133834e-01, -4.2352729e-02, -3.4435891e-02,
+        1.0000000e+02, -3.1334814e-02, -1.4359292e-01, -4.2404007e-02,
+        1.8415609e-02,  5.8889896e-02], dtype=float32)&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;We can see that the value for the bias at index 4 has changed to 100.
+Now if we run the last part of the code:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Run the Model and check what Digit was shown&lt;/span&gt;
+shownDigit &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; np&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;argmax(model&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;predict(processedImage))
+&lt;span style=&#34;color:#66d9ef&#34;&gt;print&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;Predictions:&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;, model&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;predict(processedImage))
+ 
+&lt;span style=&#34;color:#75715e&#34;&gt;# Only Digit 4 grants access!&lt;/span&gt;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; shownDigit &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt;:
+   &lt;span style=&#34;color:#66d9ef&#34;&gt;print&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;Access Granted&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;)
+&lt;span style=&#34;color:#66d9ef&#34;&gt;else&lt;/span&gt;:
+   &lt;span style=&#34;color:#66d9ef&#34;&gt;print&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;Access Denied&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The final printout:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;Predictions: [[&lt;span style=&#34;color:#ae81ff&#34;&gt;1.6611005e-38&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0.0000000e+00&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;9.0147166e-26&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0.0000000e+00&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1.0000000e+00&lt;/span&gt;
+  &lt;span style=&#34;color:#ae81ff&#34;&gt;0.0000000e+00&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0.0000000e+00&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;2.3765060e-37&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;6.6040375e-35&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0.0000000e+00&lt;/span&gt;]]
+Access Granted
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;From the printout we can see that the prediction for value four is equal to 1.0 and all the other values are either zero or extremely small. And of course we get “Access Granted” 😄&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Forget me not: Malware Classification as a Continual Learning Problem</title>
@@ -35,12 +132,8 @@
       <pubDate>Mon, 29 Jul 2019 13:16:05 +0200</pubDate>
       
       <guid>https://mariarigaki.github.io/post/summer-hacakathon-2019/</guid>
-      <description>
-
-&lt;p&gt;&lt;strong&gt;TL;DR Using a Picoscope 2204A and its SDK to perform  timing side channel attacks against a weak password checker implementation running in an Arduino. Code, screenshots and lessons learned!&lt;/strong&gt;&lt;/p&gt;
-
+      <description>&lt;p&gt;&lt;strong&gt;TL;DR Using a Picoscope 2204A and its SDK to perform  timing side channel attacks against a weak password checker implementation running in an Arduino. Code, screenshots and lessons learned!&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;Last weekend we held the bi-annual Stratosphere hackathon. It is a small tradition where twice a year the whole team gathers in a relatively remote place and we spend the weekend hacking and bonding. This time the hackathon was held at the beautiful Malá Úpa, in the mountains close to the border of Czech Republic and Poland.&lt;/p&gt;
-
 
 
 
@@ -58,20 +151,13 @@
 &lt;/figcaption&gt;
 
 &lt;/figure&gt;
-
 &lt;h2 id=&#34;the-goal&#34;&gt;The goal&lt;/h2&gt;
-
-&lt;p&gt;For this year&amp;rsquo;s event I decided that I wanted to work on something that I had not done before and step quite a lot out of my comfort zone. Ever since the Real World Crypto summer school that I attended this year in Croatia and the Side Channel Attacks (SCA) workshop, I&amp;rsquo;ve been meaning to work on side channels. In addition I had not really used an oscilloscope before and that was an opportunity to learn more and get over the fear and mystery of hardware.&lt;/p&gt;
-
-&lt;p&gt;Starting out, my goal for the hackathon was to learn how to use a USB based oscilloscope and use it in order to perform side channel attacks. The weapon of choice was a Picoscope 2204A &lt;a href=&#34;https://www.picotech.com/oscilloscope/2000/picoscope-2000-overview&#34; target=&#34;_blank&#34;&gt;[1]&lt;/a&gt; which was chosen based on the following criteria: a) it is a USB scope so it is easy to carry and works with my laptop, b) it is relatively reliable and while it is the entry level product of the series, it still is quite powerfull and c) it has software that runs in all platforms and more specifically Linux. This was crucial since I did not want to fiddle around with Windows or scopes that did not offer a good software solution including SDKs.&lt;/p&gt;
-
+&lt;p&gt;For this year&#39;s event I decided that I wanted to work on something that I had not done before and step quite a lot out of my comfort zone. Ever since the Real World Crypto summer school that I attended this year in Croatia and the Side Channel Attacks (SCA) workshop, I&#39;ve been meaning to work on side channels. In addition I had not really used an oscilloscope before and that was an opportunity to learn more and get over the fear and mystery of hardware.&lt;/p&gt;
+&lt;p&gt;Starting out, my goal for the hackathon was to learn how to use a USB based oscilloscope and use it in order to perform side channel attacks. The weapon of choice was a Picoscope 2204A &lt;a href=&#34;https://www.picotech.com/oscilloscope/2000/picoscope-2000-overview&#34;&gt;[1]&lt;/a&gt; which was chosen based on the following criteria: a) it is a USB scope so it is easy to carry and works with my laptop, b) it is relatively reliable and while it is the entry level product of the series, it still is quite powerfull and c) it has software that runs in all platforms and more specifically Linux. This was crucial since I did not want to fiddle around with Windows or scopes that did not offer a good software solution including SDKs.&lt;/p&gt;
 &lt;h2 id=&#34;side-channel-attack-sca&#34;&gt;Side Channel Attack (SCA)&lt;/h2&gt;
-
 &lt;p&gt;Side channel attacks are attacks that take advantage of information leakage that is not directly related to the function being attacked. For example, in cryptography you might have a cryptographic function such a smart card or other software that performs communication encryption. A side channel is using information such as power analysis, timing, electromagentic emanations, sound, etc to reveal secret keys instead of attacking the cryptographic algorithm itself.&lt;/p&gt;
-
-&lt;h2 id=&#34;a-timing-side-channel&#34;&gt;A timing side-channel&lt;/h2&gt;
-
-&lt;p&gt;I started first with a simple kind of SCA which is a timing attack against an insecure password implementation. I found a nice blog explaining timing side channel attacks in Arduino &lt;a href=&#34;http://eax64.github.io/2015/04/10/timing-attack-on-arduino.html&#34; target=&#34;_blank&#34;&gt;[2]&lt;/a&gt; and I used the arduino code provided there, as the vulnerable implementation to attack:
+&lt;h2 id=&#34;a-timing-sidechannel&#34;&gt;A timing side-channel&lt;/h2&gt;
+&lt;p&gt;I started first with a simple kind of SCA which is a timing attack against an insecure password implementation. I found a nice blog explaining timing side channel attacks in Arduino &lt;a href=&#34;http://eax64.github.io/2015/04/10/timing-attack-on-arduino.html&#34;&gt;[2]&lt;/a&gt; and I used the arduino code provided there, as the vulnerable implementation to attack:
 
 
 
@@ -89,11 +175,9 @@
 &lt;/figcaption&gt;
 
 &lt;/figure&gt;&lt;/p&gt;
-
 &lt;p&gt;The main idea is that you store a six digit password (or any length really) and you use the serial port to send a  candidate password to the Arduino. While the Arduino checks the password it turns on a LED that in essence corresponds to a digital pin set to ON. The password checking implementation looks at one digit at a time but it returns as soon as an incorrect digit is found. The fact that the response is not constant in time means that it leaks information about the validity of each digit, rendering the timing attack possible.
 Using the fact that the LED pin is turned on while the password check is perfomed, we can monitor the time that the PIN is on using the oscilloscope. The more digits that are correct, the longer the password checker takes and the longer the LED pin is on.&lt;/p&gt;
-
-&lt;p&gt;To illustrate the problem let&amp;rsquo;s see how the Picoscope software looks like when the first 3 digits are correct:
+&lt;p&gt;To illustrate the problem let&#39;s see how the Picoscope software looks like when the first 3 digits are correct:
 
 
 
@@ -129,25 +213,15 @@ and when all 6 digits are correct:
 &lt;/figcaption&gt;
 
 &lt;/figure&gt;&lt;/p&gt;
-
 &lt;h2 id=&#34;using-the-picoscope&#34;&gt;Using the Picoscope&lt;/h2&gt;
-
 &lt;p&gt;The Picoscope is a USB oscilloscope that can be used for multiple purposes such as voltage measurement, spectrum analysis, serial channel decoding, etc. The interesting thing about USB scopes is that they come with powerful software that can perform advanced measurements and calculations which are usually quite expensive to get, or cost extra in bigger tabletop oscilloscopes.  Of course it all comes down to specifications such as sampling rates, bandwidth, number of channels and so on, but my impression so far is that you can get very good value for money with a good USB scope.&lt;/p&gt;
-
 &lt;p&gt;I do not intent to cover the Picoscope functions in detail in this blog post, but I do want to mention two functions that were important for this project:  &lt;strong&gt;Triggers&lt;/strong&gt; and &lt;strong&gt;automatic measurement&lt;/strong&gt; functions.&lt;/p&gt;
-
 &lt;p&gt;As the scope runs, it continuously gathers data until you stop it. This results in viewing everything on screen in real time but usually we want to &amp;ldquo;freeze&amp;rdquo; the scope when something of interest happens so that we can see it.  A &lt;strong&gt;trigger&lt;/strong&gt; allows us to tell the scope when to start (and stop) capturing data and present them on screen. Triggers can be &lt;em&gt;single&lt;/em&gt; (only triggers once) or &lt;em&gt;repeated&lt;/em&gt; (when we capturing periodic events) and they come with a lot of settings such as &lt;em&gt;rising edge&lt;/em&gt; or &lt;em&gt;falling edge&lt;/em&gt;, etc. An example of a rising edge trigger is when we want the scope to start capturing when the voltage of a measurement goes from 0 to some higher value.&lt;/p&gt;
-
 &lt;p&gt;The other function that I used a lot in this project was the &lt;strong&gt;measurement&lt;/strong&gt; functionality. Since we want to measure the time for which the LED pin is on we can use the &lt;em&gt;high pulse width&lt;/em&gt; type of measurement. The results appear as a line in the bottom of the window and it is visible in the previous two pictures.&lt;/p&gt;
-
 &lt;h2 id=&#34;using-the-pico-sdk-to-perform-the-attack&#34;&gt;Using the Pico SDK to perform the attack&lt;/h2&gt;
-
 &lt;p&gt;Since we can access the serial port we could always perform the attack programmatically, for example using pyserial. But where is the fun in that? 😄 Besides, I wanted to use the scope for the attack, since the fact that the serial port was used for input was just for illustration purposes. It could have been replaced just as easily with a bunch of buttons or some other way to provide input that is not directly measurable.&lt;/p&gt;
-
-&lt;p&gt;It was also a great opportunity to learn how to use the SDK that comes with the Picoscope. After looking at the site for documentation I got to the Github link where all the SDK software can be found &lt;a href=&#34;https://github.com/picotech&#34; target=&#34;_blank&#34;&gt;[3]&lt;/a&gt;. A good number of languages is supported (C/C++, C#, Python, VB .NET, LabVIEW, MATLAB). For each language and each specific driver there is example code that helps to get started. Although the code is very well documented and the programming guide explains quite a few details, the task was not problem free.&lt;/p&gt;
-
+&lt;p&gt;It was also a great opportunity to learn how to use the SDK that comes with the Picoscope. After looking at the site for documentation I got to the Github link where all the SDK software can be found &lt;a href=&#34;https://github.com/picotech&#34;&gt;[3]&lt;/a&gt;. A good number of languages is supported (C/C++, C#, Python, VB .NET, LabVIEW, MATLAB). For each language and each specific driver there is example code that helps to get started. Although the code is very well documented and the programming guide explains quite a few details, the task was not problem free.&lt;/p&gt;
 &lt;p&gt;The first problem I faced was that I could not open the port and connect to the device. It turns out that there are two drivers for the 2000 series: the &lt;strong&gt;ps2000&lt;/strong&gt; and the &lt;strong&gt;ps2000a&lt;/strong&gt;. Although my device is called 2204A it actually did NOT use the &lt;strong&gt;ps2000a&lt;/strong&gt; driver but the &lt;strong&gt;ps2000&lt;/strong&gt; one. I found that out after going through some posts in the support forum that faced similar problems. Even though I knew now which example should be the correct one to try, I still could not connect to the device. It turned out that I needed to run the python script using &lt;strong&gt;sudo&lt;/strong&gt; in order to open the connection!!!&lt;/p&gt;
-
 &lt;p&gt;The second problem was to reproduce the settings that were working with the picoscope using the python code. The most straight forward approach here was to try and understand the different API calls and how they correspond to the software settings and then plot the screens using matplotlib in order to see the captured data.
 After fiddling quite a bit with the code I managed to produce something like the folllowing which is very close to what I could see in the picoscope software after providing the correct password:
 
@@ -167,13 +241,10 @@ After fiddling quite a bit with the code I managed to produce something like the
 &lt;/figcaption&gt;
 
 &lt;/figure&gt;&lt;/p&gt;
-
 &lt;h3 id=&#34;code-walkthrough&#34;&gt;Code walkthrough&lt;/h3&gt;
-
 &lt;p&gt;As a base I started with the Block code example that comes with the SDK.
-As mentioned in the example, the code &amp;ldquo;&lt;em&gt;opens a 2000 driver device, sets up two channels and a trigger then collects a block of data. This data is then plotted as mV against time in ns.&lt;/em&gt;&amp;ldquo;
+As mentioned in the example, the code &amp;ldquo;&lt;em&gt;opens a 2000 driver device, sets up two channels and a trigger then collects a block of data. This data is then plotted as mV against time in ns.&lt;/em&gt;&amp;rdquo;
 Steps:&lt;/p&gt;
-
 &lt;ul&gt;
 &lt;li&gt;Open connection: &lt;code&gt;ps2000_open_unit()&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;Define channels: &lt;code&gt;ps2000_set_channel()&lt;/code&gt;&lt;/li&gt;
@@ -187,11 +258,8 @@ Steps:&lt;/p&gt;
 &lt;li&gt;Stop the scope: &lt;code&gt;ps2000_stop()&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;Close the scope: &lt;code&gt;ps2000_close_unit()&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
-&lt;p&gt;Defining the trigger and the timebase were the most challenging parts for me, because the way some things are defined were not exactly similar to what I was seeing using the picoscope software. For example, the trigger threshold was set using ADC counts and not in voltage as it was on the software. The timebase was also tricky because it expects an integer value that is relative to the maximum timebase your device supports. After some calculations and a bit of trial and error, I managed to get to a point where my captured data corresponded to something I could use for the attack. The programming guide that explains the functions and their arguments in detail can be found here &lt;a href=&#34;https://www.picotech.com/download/manuals/picoscope-2000-series-programmers-guide.pdf&#34; target=&#34;_blank&#34;&gt;[4]&lt;/a&gt;.&lt;/p&gt;
-
+&lt;p&gt;Defining the trigger and the timebase were the most challenging parts for me, because the way some things are defined were not exactly similar to what I was seeing using the picoscope software. For example, the trigger threshold was set using ADC counts and not in voltage as it was on the software. The timebase was also tricky because it expects an integer value that is relative to the maximum timebase your device supports. After some calculations and a bit of trial and error, I managed to get to a point where my captured data corresponded to something I could use for the attack. The programming guide that explains the functions and their arguments in detail can be found here &lt;a href=&#34;https://www.picotech.com/download/manuals/picoscope-2000-series-programmers-guide.pdf&#34;&gt;[4]&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;The following changes/additions were required for the timing attack:&lt;/p&gt;
-
 &lt;ul&gt;
 &lt;li&gt;Open the serial port using pyserial.&lt;/li&gt;
 &lt;li&gt;Send a password while data capture was running.&lt;/li&gt;
@@ -200,8 +268,7 @@ Steps:&lt;/p&gt;
 &lt;li&gt;Repeat for all possible digits (0&amp;hellip;9).&lt;/li&gt;
 &lt;li&gt;Repeat for all six digits of the password.&lt;/li&gt;
 &lt;/ul&gt;
-
-&lt;p&gt;The gist with all the code can be found here &lt;a href=&#34;https://gist.github.com/MariaRigaki/2d65a8a569cced23272beb7962d6654d&#34; target=&#34;_blank&#34;&gt;[5]&lt;/a&gt; and a screenshot of the ouptut can be seen here:
+&lt;p&gt;The gist with all the code can be found here &lt;a href=&#34;https://gist.github.com/MariaRigaki/2d65a8a569cced23272beb7962d6654d&#34;&gt;[5]&lt;/a&gt; and a screenshot of the ouptut can be seen here:
 
 
 
@@ -219,22 +286,14 @@ Steps:&lt;/p&gt;
 &lt;/figcaption&gt;
 
 &lt;/figure&gt;&lt;/p&gt;
-
 &lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
-
 &lt;p&gt;I really enjoyed this project and it turned out that this was a great fit for the hackathon as I managed to pull it off within the 24 hour period that we had for this. Before I started out, I had very little experience using an oscilloscope and I only watched some videos in Youtube in order to try and learn the basics. Now, I feel much more comfortable and I am looking forward to explore more capabilities of the scope. Hopefully I will be able to use it to perform other types of side channels. Stay tuned and as always if you have any questions or comments feel free to contact me!&lt;/p&gt;
-
 &lt;h2 id=&#34;links-and-references&#34;&gt;Links and References&lt;/h2&gt;
-
-&lt;p&gt;[1] &lt;a href=&#34;https://www.picotech.com/oscilloscope/2000/picoscope-2000-overview&#34; target=&#34;_blank&#34;&gt;https://www.picotech.com/oscilloscope/2000/picoscope-2000-overview&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;[2] &lt;a href=&#34;http://eax64.github.io/2015/04/10/timing-attack-on-arduino.html&#34; target=&#34;_blank&#34;&gt;http://eax64.github.io/2015/04/10/timing-attack-on-arduino.html&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;[3] &lt;a href=&#34;https://github.com/picotech&#34; target=&#34;_blank&#34;&gt;https://github.com/picotech&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;[4] &lt;a href=&#34;https://www.picotech.com/download/manuals/picoscope-2000-series-programmers-guide.pdf&#34; target=&#34;_blank&#34;&gt;https://www.picotech.com/download/manuals/picoscope-2000-series-programmers-guide.pdf&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;[5] &lt;a href=&#34;https://gist.github.com/MariaRigaki/2d65a8a569cced23272beb7962d6654d&#34; target=&#34;_blank&#34;&gt;https://gist.github.com/MariaRigaki/2d65a8a569cced23272beb7962d6654d&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;[1] &lt;a href=&#34;https://www.picotech.com/oscilloscope/2000/picoscope-2000-overview&#34;&gt;https://www.picotech.com/oscilloscope/2000/picoscope-2000-overview&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;[2] &lt;a href=&#34;http://eax64.github.io/2015/04/10/timing-attack-on-arduino.html&#34;&gt;http://eax64.github.io/2015/04/10/timing-attack-on-arduino.html&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;[3] &lt;a href=&#34;https://github.com/picotech&#34;&gt;https://github.com/picotech&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;[4] &lt;a href=&#34;https://www.picotech.com/download/manuals/picoscope-2000-series-programmers-guide.pdf&#34;&gt;https://www.picotech.com/download/manuals/picoscope-2000-series-programmers-guide.pdf&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;[5] &lt;a href=&#34;https://gist.github.com/MariaRigaki/2d65a8a569cced23272beb7962d6654d&#34;&gt;https://gist.github.com/MariaRigaki/2d65a8a569cced23272beb7962d6654d&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
