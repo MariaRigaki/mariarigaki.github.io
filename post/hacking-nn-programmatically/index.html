@@ -84,7 +84,7 @@ The first chapter introduces a simple attack where the main idea is that we want
   
   
   
-  <link rel="stylesheet" href="/css/academic.min.2308331fba2be32ffa3eba0f280c1772.css">
+  <link rel="stylesheet" href="/css/academic.min.1f0b82a80e38f96a13adab79961dbea1.css">
 
   
 
@@ -513,14 +513,14 @@ The first chapter introduces a simple attack where the main idea is that we want
 </code></pre></div><p>This part of the code is provided in the exercise code:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># Load the Image File with skimage.</span>
 <span style="color:#75715e"># (&#39;imread&#39; was deprecated in SciPy 1.0.0, and will be removed in 1.2.0.)</span>
-image <span style="color:#f92672">=</span> io<span style="color:#f92672">.</span>imread(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">./fake_id.png</span><span style="color:#e6db74">&#39;</span>)
+image <span style="color:#f92672">=</span> io<span style="color:#f92672">.</span>imread(<span style="color:#e6db74">&#39;./fake_id.png&#39;</span>)
 processedImage <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>zeros([<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">28</span>, <span style="color:#ae81ff">28</span>, <span style="color:#ae81ff">1</span>])
 <span style="color:#66d9ef">for</span> yy <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">28</span>):
    <span style="color:#66d9ef">for</span> xx <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">28</span>):
        processedImage[<span style="color:#ae81ff">0</span>][xx][yy][<span style="color:#ae81ff">0</span>] <span style="color:#f92672">=</span> float(image[xx][yy]) <span style="color:#f92672">/</span> <span style="color:#ae81ff">255</span>
  
 <span style="color:#75715e"># Load the Model</span>
-model <span style="color:#f92672">=</span> keras<span style="color:#f92672">.</span>models<span style="color:#f92672">.</span>load_model(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">./model.h5</span><span style="color:#e6db74">&#39;</span>)
+model <span style="color:#f92672">=</span> keras<span style="color:#f92672">.</span>models<span style="color:#f92672">.</span>load_model(<span style="color:#e6db74">&#39;./model.h5&#39;</span>)
 </code></pre></div><p>The first exercise is asking us to answer a few basic questions and the first one is “What does the architecture look like?” We can get this information by simply calling <code>model.summary()</code>:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># Answer to Q1</span>
 model<span style="color:#f92672">.</span>summary()
@@ -560,15 +560,15 @@ tvars <span style="color:#f92672">=</span> model<span style="color:#f92672">.</s
  
 <span style="color:#75715e"># The biases we want to change are the last item in the list</span>
 bias <span style="color:#f92672">=</span> tvars[<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]
-<span style="color:#66d9ef">print</span>(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Values before the change:</span><span style="color:#e6db74">&#34;</span>, bias)
+<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;Values before the change:&#34;</span>, bias)
 </code></pre></div><p>Print output:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">Values before the change: <span style="color:#f92672">&lt;</span>tf<span style="color:#f92672">.</span>Variable <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">dense_2/bias:0</span><span style="color:#e6db74">&#39;</span> shape<span style="color:#f92672">=</span>(<span style="color:#ae81ff">10</span>,) <span style="color:#75715e">#dtype=float32, numpy=</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">Values before the change: <span style="color:#f92672">&lt;</span>tf<span style="color:#f92672">.</span>Variable <span style="color:#e6db74">&#39;dense_2/bias:0&#39;</span> shape<span style="color:#f92672">=</span>(<span style="color:#ae81ff">10</span>,) <span style="color:#75715e">#dtype=float32, numpy=</span>
 array([<span style="color:#f92672">-</span><span style="color:#ae81ff">0.03398215</span>,  <span style="color:#ae81ff">0.15133834</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">0.04235273</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">0.03443589</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">0.03148068</span>,
        <span style="color:#f92672">-</span><span style="color:#ae81ff">0.03133481</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">0.14359292</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">0.04240401</span>,  <span style="color:#ae81ff">0.01841561</span>,  <span style="color:#ae81ff">0.0588899</span> ],
       dtype<span style="color:#f92672">=</span>float32)<span style="color:#f92672">&gt;</span>
 </code></pre></div><p>And now we cChange the value of the bias for number 4 to a large value</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">bias[<span style="color:#ae81ff">4</span>]<span style="color:#f92672">.</span>assign(<span style="color:#ae81ff">100.</span>)
-<span style="color:#66d9ef">print</span>(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Values after the change:</span><span style="color:#e6db74">&#34;</span>, bias)
+<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;Values after the change:&#34;</span>, bias)
 </code></pre></div><pre><code>Values after the change: &lt;tf.Variable 'dense_2/bias:0' shape=(10,) dtype=float32, numpy=
 array([-3.3982150e-02,  1.5133834e-01, -4.2352729e-02, -3.4435891e-02,
         1.0000000e+02, -3.1334814e-02, -1.4359292e-01, -4.2404007e-02,
@@ -577,13 +577,13 @@ array([-3.3982150e-02,  1.5133834e-01, -4.2352729e-02, -3.4435891e-02,
 Now if we run the last part of the code:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># Run the Model and check what Digit was shown</span>
 shownDigit <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>argmax(model<span style="color:#f92672">.</span>predict(processedImage))
-<span style="color:#66d9ef">print</span>(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Predictions:</span><span style="color:#e6db74">&#34;</span>, model<span style="color:#f92672">.</span>predict(processedImage))
+<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;Predictions:&#34;</span>, model<span style="color:#f92672">.</span>predict(processedImage))
  
 <span style="color:#75715e"># Only Digit 4 grants access!</span>
 <span style="color:#66d9ef">if</span> shownDigit <span style="color:#f92672">==</span> <span style="color:#ae81ff">4</span>:
-   <span style="color:#66d9ef">print</span>(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Access Granted</span><span style="color:#e6db74">&#34;</span>)
+   <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;Access Granted&#34;</span>)
 <span style="color:#66d9ef">else</span>:
-   <span style="color:#66d9ef">print</span>(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Access Denied</span><span style="color:#e6db74">&#34;</span>)
+   <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;Access Denied&#34;</span>)
 </code></pre></div><p>The final printout:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">Predictions: [[<span style="color:#ae81ff">1.6611005e-38</span> <span style="color:#ae81ff">0.0000000e+00</span> <span style="color:#ae81ff">9.0147166e-26</span> <span style="color:#ae81ff">0.0000000e+00</span> <span style="color:#ae81ff">1.0000000e+00</span>
   <span style="color:#ae81ff">0.0000000e+00</span> <span style="color:#ae81ff">0.0000000e+00</span> <span style="color:#ae81ff">2.3765060e-37</span> <span style="color:#ae81ff">6.6040375e-35</span> <span style="color:#ae81ff">0.0000000e+00</span>]]
