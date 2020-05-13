@@ -1,87 +1,16 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tags on Maria Rigaki</title>
+    <title>Tags | Maria Rigaki</title>
     <link>https://mariarigaki.github.io/tags/</link>
-    <description>Recent content in Tags on Maria Rigaki</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
-    <language>en-us</language>
-    <lastBuildDate>Mon, 29 Jul 2019 13:16:05 +0200</lastBuildDate>
-    
-	    <atom:link href="https://mariarigaki.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-    <item>
-      <title>oscilloscope</title>
-      <link>https://mariarigaki.github.io/tags/oscilloscope/</link>
-      <pubDate>Mon, 29 Jul 2019 13:16:05 +0200</pubDate>
-      
-      <guid>https://mariarigaki.github.io/tags/oscilloscope/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>side-channels</title>
-      <link>https://mariarigaki.github.io/tags/side-channels/</link>
-      <pubDate>Mon, 29 Jul 2019 13:16:05 +0200</pubDate>
-      
-      <guid>https://mariarigaki.github.io/tags/side-channels/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>advanced persistence threat</title>
-      <link>https://mariarigaki.github.io/tags/advanced-persistence-threat/</link>
-      <pubDate>Thu, 20 Jun 2019 11:56:27 +0200</pubDate>
-      
-      <guid>https://mariarigaki.github.io/tags/advanced-persistence-threat/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>cyber espionage</title>
-      <link>https://mariarigaki.github.io/tags/cyber-espionage/</link>
-      <pubDate>Thu, 20 Jun 2019 11:56:27 +0200</pubDate>
-      
-      <guid>https://mariarigaki.github.io/tags/cyber-espionage/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>malware operations</title>
-      <link>https://mariarigaki.github.io/tags/malware-operations/</link>
-      <pubDate>Thu, 20 Jun 2019 11:56:27 +0200</pubDate>
-      
-      <guid>https://mariarigaki.github.io/tags/malware-operations/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>GAN</title>
-      <link>https://mariarigaki.github.io/tags/gan/</link>
-      <pubDate>Wed, 23 May 2018 11:56:27 +0200</pubDate>
-      
-      <guid>https://mariarigaki.github.io/tags/gan/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>intrusion detection</title>
-      <link>https://mariarigaki.github.io/tags/intrusion-detection/</link>
-      <pubDate>Wed, 23 May 2018 11:56:27 +0200</pubDate>
-      
-      <guid>https://mariarigaki.github.io/tags/intrusion-detection/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>adversarial ml</title>
-      <link>https://mariarigaki.github.io/tags/adversarial-ml/</link>
-      <pubDate>Thu, 06 Jul 2017 11:43:05 +0200</pubDate>
-      
-      <guid>https://mariarigaki.github.io/tags/adversarial-ml/</guid>
-      <description></description>
-    </item>
+      <atom:link href="https://mariarigaki.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <description>Tags</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Mon, 29 Jul 2019 13:16:05 +0200</lastBuildDate>
+    <image>
+      <url>https://mariarigaki.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
+      <title>Tags</title>
+      <link>https://mariarigaki.github.io/tags/</link>
+    </image>
     
   </channel>
 </rss>

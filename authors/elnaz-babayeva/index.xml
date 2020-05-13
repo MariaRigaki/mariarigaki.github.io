@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Elnaz Babayeva on Maria Rigaki</title>
+    <title>Elnaz Babayeva | Maria Rigaki</title>
     <link>https://mariarigaki.github.io/authors/elnaz-babayeva/</link>
-    <description>Recent content in Elnaz Babayeva on Maria Rigaki</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
-    <language>en-us</language>
-    <lastBuildDate>Thu, 31 Oct 2019 20:05:32 +0100</lastBuildDate>
-    
-	    <atom:link href="https://mariarigaki.github.io/authors/elnaz-babayeva/index.xml" rel="self" type="application/rss+xml" />
-    
+      <atom:link href="https://mariarigaki.github.io/authors/elnaz-babayeva/index.xml" rel="self" type="application/rss+xml" />
+    <description>Elnaz Babayeva</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Thu, 31 Oct 2019 20:05:32 +0100</lastBuildDate>
+    <image>
+      <url>https://mariarigaki.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
+      <title>Elnaz Babayeva</title>
+      <link>https://mariarigaki.github.io/authors/elnaz-babayeva/</link>
+    </image>
     
     <item>
       <title>Forget me not: Malware Classification as a Continual Learning Problem</title>
       <link>https://mariarigaki.github.io/talk/cybersecai/</link>
       <pubDate>Thu, 31 Oct 2019 20:05:32 +0100</pubDate>
-      
       <guid>https://mariarigaki.github.io/talk/cybersecai/</guid>
       <description></description>
     </item>

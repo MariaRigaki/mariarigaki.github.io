@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>intrusion detection on Maria Rigaki</title>
+    <title>intrusion detection | Maria Rigaki</title>
     <link>https://mariarigaki.github.io/tags/intrusion-detection/</link>
-    <description>Recent content in intrusion detection on Maria Rigaki</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
-    <language>en-us</language>
-    <lastBuildDate>Wed, 23 May 2018 11:56:27 +0200</lastBuildDate>
-    
-	    <atom:link href="https://mariarigaki.github.io/tags/intrusion-detection/index.xml" rel="self" type="application/rss+xml" />
-    
+      <atom:link href="https://mariarigaki.github.io/tags/intrusion-detection/index.xml" rel="self" type="application/rss+xml" />
+    <description>intrusion detection</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 23 May 2018 11:56:27 +0200</lastBuildDate>
+    <image>
+      <url>https://mariarigaki.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
+      <title>intrusion detection</title>
+      <link>https://mariarigaki.github.io/tags/intrusion-detection/</link>
+    </image>
     
     <item>
       <title>Bringing a GAN to a Knife-fight: Adapting Malware Communication to Avoid Detection</title>
       <link>https://mariarigaki.github.io/publication/gan-knife-fight/</link>
       <pubDate>Wed, 23 May 2018 11:56:27 +0200</pubDate>
-      
       <guid>https://mariarigaki.github.io/publication/gan-knife-fight/</guid>
       <description></description>
     </item>
@@ -24,7 +24,6 @@
       <title>Adversarial Deep Learning Against Intrusion Detection Classifiers</title>
       <link>https://mariarigaki.github.io/publication/master-thesis/</link>
       <pubDate>Thu, 06 Jul 2017 11:43:05 +0200</pubDate>
-      
       <guid>https://mariarigaki.github.io/publication/master-thesis/</guid>
       <description></description>
     </item>

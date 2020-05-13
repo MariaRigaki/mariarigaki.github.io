@@ -1,24 +1,26 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Security on Maria Rigaki</title>
+    <title>Security | Maria Rigaki</title>
     <link>https://mariarigaki.github.io/categories/security/</link>
-    <description>Recent content in Security on Maria Rigaki</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
-    <language>en-us</language>
-    <lastBuildDate>Fri, 29 Nov 2019 20:17:04 +0100</lastBuildDate>
-    
-	    <atom:link href="https://mariarigaki.github.io/categories/security/index.xml" rel="self" type="application/rss+xml" />
-    
+      <atom:link href="https://mariarigaki.github.io/categories/security/index.xml" rel="self" type="application/rss+xml" />
+    <description>Security</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Fri, 29 Nov 2019 20:17:04 +0100</lastBuildDate>
+    <image>
+      <url>https://mariarigaki.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
+      <title>Security</title>
+      <link>https://mariarigaki.github.io/categories/security/</link>
+    </image>
     
     <item>
       <title>Changing Weights and Biases Programmatically for “Neural Network Hacking” and more</title>
       <link>https://mariarigaki.github.io/post/hacking-nn-programmatically/</link>
       <pubDate>Fri, 29 Nov 2019 20:17:04 +0100</pubDate>
-      
       <guid>https://mariarigaki.github.io/post/hacking-nn-programmatically/</guid>
       <description>&lt;p&gt;&lt;strong&gt;TL;DR Using Tensorflow / Keras APIs to read and change Neural Network parameters.&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;A few days ago I came across a paper called &lt;a href=&#34;https://arxiv.org/pdf/1911.07658.pdf&#34;&gt;“Hacking Neural Networks”&lt;/a&gt; by Michael Kissner aka &lt;a href=&#34;https://twitter.com/Spellwrath&#34;&gt;@Spellwrath&lt;/a&gt;. It is a beautiful introduction to attacks against neural networks, very approachable and fun to read. What I liked most is that it comes together with a Github repository and some exercises to try the different attacks: &lt;a href=&#34;https://github.com/Kayzaks/HackingNeuralNetworks&#34;&gt;https://github.com/Kayzaks/HackingNeuralNetworks&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;A few days ago I came across a paper called 
+&lt;a href=&#34;https://arxiv.org/pdf/1911.07658.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;“Hacking Neural Networks”&lt;/a&gt; by Michael Kissner aka 
+&lt;a href=&#34;https://twitter.com/Spellwrath&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;@Spellwrath&lt;/a&gt;. It is a beautiful introduction to attacks against neural networks, very approachable and fun to read. What I liked most is that it comes together with a Github repository and some exercises to try the different attacks: &lt;a href=&#34;https://github.com/Kayzaks/HackingNeuralNetworks&#34;&gt;https://github.com/Kayzaks/HackingNeuralNetworks&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;The first chapter introduces a simple attack where the main idea is that we want to cause a neural network to misclassify an image by just changing some part of the model. The assumption here is that we have access to the model file and we can change it arbitrarily. The model is saved in the HDF5 format (“model.h5”).  The proposed solution and probably the most straightforward thing to do is to load the model using a tool such as HDFView that can edit the file and change it manually. But what if we want to do this programmatically?&lt;/p&gt;
 &lt;p&gt;Tensorflow and keras provide this possibility, however, the documentation is not the easiest to navigate. Here is how you could solve the exercises 0-0 and 0-1 programmatically. Note, that the code below works for Tensorflow v.2.0.&lt;/p&gt;
 &lt;p&gt;First, the necessary imports:&lt;/p&gt;
