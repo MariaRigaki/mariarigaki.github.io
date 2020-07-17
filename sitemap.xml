@@ -3,8 +3,43 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://mariarigaki.github.io/publication_types/3/</loc>
+    <lastmod>2020-07-17T17:34:16+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mariarigaki.github.io/publication/privacy-survey/</loc>
+    <lastmod>2020-07-17T17:34:16+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://mariarigaki.github.io/authors/</loc>
-    <lastmod>2019-11-29T20:17:04+01:00</lastmod>
+    <lastmod>2020-07-17T17:34:16+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mariarigaki.github.io/authors/maria-rigaki/</loc>
+    <lastmod>2020-07-17T17:34:16+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mariarigaki.github.io/</loc>
+    <lastmod>2020-07-17T17:34:16+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mariarigaki.github.io/publication_types/</loc>
+    <lastmod>2020-07-17T17:34:16+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mariarigaki.github.io/publication/</loc>
+    <lastmod>2020-07-17T17:34:16+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mariarigaki.github.io/authors/sebastian-garcia/</loc>
+    <lastmod>2020-07-17T17:34:16+02:00</lastmod>
   </url>
   
   <url>
@@ -19,16 +54,6 @@
   
   <url>
     <loc>https://mariarigaki.github.io/categories/machine-learning/</loc>
-    <lastmod>2019-11-29T20:17:04+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mariarigaki.github.io/authors/maria-rigaki/</loc>
-    <lastmod>2019-11-29T20:17:04+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mariarigaki.github.io/</loc>
     <lastmod>2019-11-29T20:17:04+01:00</lastmod>
   </url>
   
@@ -54,11 +79,6 @@
   
   <url>
     <loc>https://mariarigaki.github.io/talk/</loc>
-    <lastmod>2019-10-31T20:05:32+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mariarigaki.github.io/authors/sebastian-garcia/</loc>
     <lastmod>2019-10-31T20:05:32+01:00</lastmod>
   </url>
   
@@ -133,11 +153,6 @@
   </url>
   
   <url>
-    <loc>https://mariarigaki.github.io/publication/</loc>
-    <lastmod>2019-03-21T11:56:27+02:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://mariarigaki.github.io/publication/gan-knife-fight/</loc>
     <lastmod>2018-05-23T11:56:27+02:00</lastmod>
   </url>
@@ -174,10 +189,6 @@
   
   <url>
     <loc>https://mariarigaki.github.io/authors/admin/</loc>
-  </url>
-  
-  <url>
-    <loc>https://mariarigaki.github.io/publication_types/</loc>
   </url>
   
 </urlset>

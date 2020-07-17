@@ -5,12 +5,20 @@
     <link>https://mariarigaki.github.io/authors/maria-rigaki/</link>
       <atom:link href="https://mariarigaki.github.io/authors/maria-rigaki/index.xml" rel="self" type="application/rss+xml" />
     <description>Maria Rigaki</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Fri, 29 Nov 2019 20:17:04 +0100</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Fri, 17 Jul 2020 17:34:16 +0200</lastBuildDate>
     <image>
       <url>https://mariarigaki.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
       <title>Maria Rigaki</title>
       <link>https://mariarigaki.github.io/authors/maria-rigaki/</link>
     </image>
+    
+    <item>
+      <title>A Survey of Privacy Attacks in Machine Learning</title>
+      <link>https://mariarigaki.github.io/publication/privacy-survey/</link>
+      <pubDate>Fri, 17 Jul 2020 17:34:16 +0200</pubDate>
+      <guid>https://mariarigaki.github.io/publication/privacy-survey/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Changing Weights and Biases Programmatically for “Neural Network Hacking” and more</title>
