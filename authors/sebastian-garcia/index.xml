@@ -5,12 +5,20 @@
     <link>https://mariarigaki.github.io/authors/sebastian-garcia/</link>
       <atom:link href="https://mariarigaki.github.io/authors/sebastian-garcia/index.xml" rel="self" type="application/rss+xml" />
     <description>Sebastian Garcia</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Fri, 05 Nov 2021 15:00:00 +0200</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Thu, 14 Apr 2022 13:32:25 +0200</lastBuildDate>
     <image>
       <url>https://mariarigaki.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
       <title>Sebastian Garcia</title>
       <link>https://mariarigaki.github.io/authors/sebastian-garcia/</link>
     </image>
+    
+    <item>
+      <title>Stealing Malware Classifiers and AVs at Low False Positive Conditions</title>
+      <link>https://mariarigaki.github.io/publication/model_extraction_malware/</link>
+      <pubDate>Thu, 14 Apr 2022 13:32:25 +0200</pubDate>
+      <guid>https://mariarigaki.github.io/publication/model_extraction_malware/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Stealing Malware Classification Models for Antivirus Evasion</title>
