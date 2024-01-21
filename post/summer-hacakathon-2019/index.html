@@ -1,83 +1,194 @@
-<!DOCTYPE html><html lang="en-us" >
+<!DOCTYPE html>
+<!-- This site was created with Wowchemy. https://www.wowchemy.com -->
+<!-- Last Published: January 21, 2024 --><html lang="en-us" >
+
 
 <head>
-
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Source Themes Academic 4.8.0">
-
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  
+  
+  
+    <meta name="generator" content="Wowchemy 5.7.0 for Hugo" />
   
 
   
   
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+  
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  
+
+  
+  
+  
+    
+      
+      <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap" media="print" onload="this.media='all'">
+    
+  
+
+  
+  
+
+  
+  
+
+  
+
+  <link rel="stylesheet" href="/css/vendor-bundle.min.047268c6dd09ad74ba54a0ba71837064.css" media="print" onload="this.media='all'">
+
   
   
   
     
     
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.2/css/academicons.min.css" integrity="sha512-KlJCpRsLf+KKu2VQa5vmRuClRFjxc5lXO03ixZt82HZUk41+1I0bD8KBSA0fY290ayMfWYI9udIqeOWSu1/uZg==" crossorigin="anonymous" media="print" onload="this.media='all'">
     
-  
-  
 
-  
-
-  
-  
-  
     
-  
-  <meta name="description" content="TL;DR Using a Picoscope 2204A and its SDK to perform timing side channel attacks against a weak password checker implementation running in an Arduino. Code, screenshots and lessons learned!
-Last weekend we held the bi-annual Stratosphere hackathon. It is a small tradition where twice a year the whole team gathers in a relatively remote place and we spend the weekend hacking and bonding. This time the hackathon was held at the beautiful Malá Úpa, in the mountains close to the border of Czech Republic and Poland.">
-
-  
-  <link rel="alternate" hreflang="en-us" href="https://mariarigaki.github.io/post/summer-hacakathon-2019/">
-
-  
-
-
-  
-  
-  
-  <meta name="theme-color" content="hsl(339, 90%, 68%)">
-  
-
-  
-  
-  
-  <script src="/js/mathjax-config.js"></script>
-  
-
-  
-  
-  
-  
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-1/css/all.min.css" integrity="sha256-4w9DunooKSr3MFXHXWyFER38WmPdm361bQS/2KUWZbU=" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
-
     
     
     
       
+      
     
     
+    
+
+    
+    
+    
+
+    
+
+    
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
       
       
         
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/github.min.css" crossorigin="anonymous" title="hl-light" disabled>
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark">
-        
+      
+
       
     
-
-    
-
-    
-
-    
-    
+      
       
 
       
@@ -86,12 +197,6 @@ Last weekend we held the bi-annual Stratosphere hackathon. It is a small traditi
       
     
       
-
-      
-      
-
-      
-    
       
 
       
@@ -99,127 +204,19 @@ Last weekend we held the bi-annual Stratosphere hackathon. It is a small traditi
 
       
     
-      
-
-      
-      
-
-      
-    
-      
-
-      
-      
-
-      
-    
-      
-
-      
-      
-
-      
-    
-      
-
-      
-      
-
-      
-    
-      
-
-      
-      
-
-      
-    
-      
-
-      
-      
-
-      
-    
-      
-
-      
-      
-
-      
-    
-      
-
-      
-      
-
-      
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.1.2/lazysizes.min.js" integrity="sha256-Md1qLToewPeKjfAHU1zyPwOutccPAm5tahnaw7Osw0A=" crossorigin="anonymous" async></script>
-      
-    
-      
-
-      
-      
-
-      
-    
-      
-
-      
-      
-
-      
-    
-      
-
-      
-      
-
-      
-        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" integrity="" crossorigin="anonymous" async></script>
-      
-    
-      
-
-      
-      
-
-      
-    
-
-  
-
-  
-  
-  
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CRoboto:400,400italic,700%7CRoboto+Mono&display=swap">
   
 
   
   
   
   
-  <link rel="stylesheet" href="/css/academic.css">
-
   
-
-
-
-
   
-
+  <link rel="stylesheet" href="/css/wowchemy.042e26407c9e383d96a1f26d6787c686.css" />
 
   
   
-
   
-
-  <link rel="manifest" href="/index.webmanifest">
-  <link rel="icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_32x32_fill_lanczos_center_2.png">
-  <link rel="apple-touch-icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_2.png">
-
-  <link rel="canonical" href="https://mariarigaki.github.io/post/summer-hacakathon-2019/">
 
   
   
@@ -230,27 +227,115 @@ Last weekend we held the bi-annual Stratosphere hackathon. It is a small traditi
   
     
     
+    <link rel="stylesheet" href="/css/libs/chroma/github-light.min.css" title="hl-light" media="print" onload="this.media='all'" >
+    <link rel="stylesheet" href="/css/libs/chroma/dracula.min.css" title="hl-dark" media="print" onload="this.media='all'" disabled>
+  
+
   
   
-  <meta property="twitter:card" content="summary">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   
-  <meta property="twitter:site" content="@mrigaki">
-  <meta property="twitter:creator" content="@mrigaki">
   
-  <meta property="og:site_name" content="Maria Rigaki">
-  <meta property="og:url" content="https://mariarigaki.github.io/post/summer-hacakathon-2019/">
-  <meta property="og:title" content="Scoping it out! | Maria Rigaki">
-  <meta property="og:description" content="TL;DR Using a Picoscope 2204A and its SDK to perform timing side channel attacks against a weak password checker implementation running in an Arduino. Code, screenshots and lessons learned!
-Last weekend we held the bi-annual Stratosphere hackathon. It is a small tradition where twice a year the whole team gathers in a relatively remote place and we spend the weekend hacking and bonding. This time the hackathon was held at the beautiful Malá Úpa, in the mountains close to the border of Czech Republic and Poland."><meta property="og:image" content="https://mariarigaki.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png">
-  <meta property="twitter:image" content="https://mariarigaki.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png"><meta property="og:locale" content="en-us">
   
-    
-      <meta property="article:published_time" content="2019-07-29T13:16:05&#43;02:00">
-    
+
+
+
+
+
+
+  <meta name="author" content="Maria Rigaki" />
+
+
+
+
+
+  
+
+<meta name="description" content="TL;DR Using a Picoscope 2204A and its SDK to perform timing side channel attacks against a weak password checker implementation running in an Arduino. Code, screenshots and lessons learned!
+Last weekend we held the bi-annual Stratosphere hackathon." />
+
+
+
+<link rel="alternate" hreflang="en-us" href="https://mariarigaki.github.io/post/summer-hacakathon-2019/" />
+<link rel="canonical" href="https://mariarigaki.github.io/post/summer-hacakathon-2019/" />
+
+
+
+  <link rel="manifest" href="/manifest.webmanifest" />
+
+
+
+<link rel="icon" type="image/png" href="/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_32x32_fill_lanczos_center_3.png" />
+<link rel="apple-touch-icon" type="image/png" href="/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_180x180_fill_lanczos_center_3.png" />
+
+<meta name="theme-color" content="#1565c0" />
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+<meta property="twitter:card" content="summary" />
+
+  <meta property="twitter:site" content="@wowchemy" />
+  <meta property="twitter:creator" content="@wowchemy" />
+<meta property="twitter:image" content="https://mariarigaki.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png" />
+<meta property="og:site_name" content="Maria Rigaki" />
+<meta property="og:url" content="https://mariarigaki.github.io/post/summer-hacakathon-2019/" />
+<meta property="og:title" content="Scoping it out! | Maria Rigaki" />
+<meta property="og:description" content="TL;DR Using a Picoscope 2204A and its SDK to perform timing side channel attacks against a weak password checker implementation running in an Arduino. Code, screenshots and lessons learned!
+Last weekend we held the bi-annual Stratosphere hackathon." /><meta property="og:image" content="https://mariarigaki.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png" /><meta property="og:locale" content="en-us" />
+
+  
+    <meta
+      property="article:published_time"
+      content="2019-07-29T13:16:05&#43;02:00"
+    />
+  
+  
     <meta property="article:modified_time" content="2019-07-29T13:16:05&#43;02:00">
   
 
-  
+
+
+
 
 
     
@@ -288,10 +373,10 @@ Last weekend we held the bi-annual Stratosphere hackathon. It is a small traditi
     "name": "Maria Rigaki",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://mariarigaki.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_2.png"
+      "url": "https://mariarigaki.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_3.png"
     }
   },
-  "description": "TL;DR Using a Picoscope 2204A and its SDK to perform timing side channel attacks against a weak password checker implementation running in an Arduino. Code, screenshots and lessons learned!\nLast weekend we held the bi-annual Stratosphere hackathon. It is a small tradition where twice a year the whole team gathers in a relatively remote place and we spend the weekend hacking and bonding. This time the hackathon was held at the beautiful Malá Úpa, in the mountains close to the border of Czech Republic and Poland."
+  "description": "TL;DR Using a Picoscope 2204A and its SDK to perform timing side channel attacks against a weak password checker implementation running in an Arduino. Code, screenshots and lessons learned!\nLast weekend we held the bi-annual Stratosphere hackathon."
 }
 </script>
 
@@ -300,22 +385,56 @@ Last weekend we held the bi-annual Stratosphere hackathon. It is a small traditi
   
 
 
+
+
+  
+  
+  
+
+  
+  
+
   
 
 
   
-
-
-
-
-
   <title>Scoping it out! | Maria Rigaki</title>
+
+  
+  
+  
+  
+
+
+
+
+
+
+
+
+
+
 
 </head>
 
-<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="dark">
 
-  <aside class="search-results" id="search">
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="page-wrapper   " data-wc-page-id="a0bf076b92406ca1073feaa1016cbfe7" >
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <script src="/js/wowchemy-init.min.ec9d49ca50e4b80bdb08f0417a28ed84.js"></script>
+
+  
+
+
+<aside class="search-modal" id="search">
   <div class="container">
     <section class="search-header">
 
@@ -324,16 +443,22 @@ Last weekend we held the bi-annual Stratosphere hackathon. It is a small traditi
           <h1>Search</h1>
         </div>
         <div class="col-6 col-search-close">
-          <a class="js-search" href="#"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+          <a class="js-search" href="#" aria-label="Close"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
         </div>
       </div>
 
       <div id="search-box">
         
         <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
-        autocomplete="off" autocorrect="off" spellcheck="false" type="search">
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search" class="form-control"
+        aria-label="Search...">
         
       </div>
+
+      
+      
+
+      
 
     </section>
     <section class="section-search-results">
@@ -347,6 +472,12 @@ Last weekend we held the bi-annual Stratosphere hackathon. It is a small traditi
 </aside>
 
 
+
+  <div class="page-header header--fixed">
+  
+  
+  
+  
   
 
 
@@ -355,195 +486,290 @@ Last weekend we held the bi-annual Stratosphere hackathon. It is a small traditi
 
 
 
-<nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
-  <div class="container">
 
-    
-    <div class="d-none d-lg-inline-flex">
-      <a class="navbar-brand" href="/">Maria Rigaki</a>
-    </div>
-    
 
-    
-    <button type="button" class="navbar-toggler" data-toggle="collapse"
-            data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
-    <span><i class="fas fa-bars"></i></span>
-    </button>
-    
 
-    
-    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
-      <a class="navbar-brand" href="/">Maria Rigaki</a>
-    </div>
-    
 
-    
-    
-    <div class="navbar-collapse main-menu-item collapse justify-content-start" id="navbar-content">
+
+<header>
+  <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
+    <div class="container-xl">
 
       
-      <ul class="navbar-nav d-md-inline-flex">
-        
-
-        
-
-        
-        
-        
-          
-        
-
-        
-        
-        
-        
-        
-        
-          
-          
-          
-            
-          
-          
-        
-
-        <li class="nav-item">
-          <a class="nav-link " href="/#about"><span>Home</span></a>
-        </li>
-
-        
-        
-
-        
-
-        
-        
-        
-          
-        
-
-        
-        
-        
-        
-        
-        
-          
-          
-          
-            
-          
-          
-        
-
-        <li class="nav-item">
-          <a class="nav-link " href="/#posts"><span>Posts</span></a>
-        </li>
-
-        
-        
-
-        
-
-        
-        
-        
-          
-        
-
-        
-        
-        
-        
-        
-        
-          
-          
-          
-            
-          
-          
-        
-
-        <li class="nav-item">
-          <a class="nav-link " href="/#publications"><span>Publications</span></a>
-        </li>
-
-        
-        
-
-        
-
-        
-        
-        
-          
-        
-
-        
-        
-        
-        
-        
-        
-          
-          
-          
-            
-          
-          
-        
-
-        <li class="nav-item">
-          <a class="nav-link " href="/#experience"><span>Experience</span></a>
-        </li>
-
-        
-        
-
+      <div class="d-none d-lg-inline-flex">
+        <a class="navbar-brand" href="/">Maria Rigaki</a>
+      </div>
       
 
+      
+      <button type="button" class="navbar-toggler" data-toggle="collapse"
+              data-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="Toggle navigation">
+      <span><i class="fas fa-bars"></i></span>
+      </button>
+      
+
+      
+      <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+        <a class="navbar-brand" href="/">Maria Rigaki</a>
+      </div>
+      
+
+      
+      
+      <div class="navbar-collapse main-menu-item collapse justify-content-start" id="navbar-content">
+
         
+        <ul class="navbar-nav d-md-inline-flex">
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+              
+              
+              
+                
+              
+              
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/#about"><span>Home</span></a>
+          </li>
+
+          
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+              
+              
+              
+                
+              
+              
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/#posts"><span>Posts</span></a>
+          </li>
+
+          
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+              
+              
+              
+                
+              
+              
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/#publications"><span>Publications</span></a>
+          </li>
+
+          
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+              
+              
+              
+                
+              
+              
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/#talks"><span>Talks</span></a>
+          </li>
+
+          
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+              
+              
+              
+                
+              
+              
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/#experience"><span>Experience</span></a>
+          </li>
+
+          
+          
+
+        
+
+          
+        </ul>
+      </div>
+
+      <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+
+        
+        
+          
+        
+
+        
+        
+        
+        <li class="nav-item">
+          <a class="nav-link js-search" href="#" aria-label="Search"><i class="fas fa-search" aria-hidden="true"></i></a>
+        </li>
+        
+
+        
+        
+        
+        <li class="nav-item dropdown theme-dropdown">
+          <a href="#" class="nav-link" data-toggle="dropdown" aria-haspopup="true" aria-label="Display preferences">
+            <i class="fas fa-moon" aria-hidden="true"></i>
+          </a>
+          <div class="dropdown-menu">
+            <a href="#" class="dropdown-item js-set-theme-light">
+              <span>Light</span>
+            </a>
+            <a href="#" class="dropdown-item js-set-theme-dark">
+              <span>Dark</span>
+            </a>
+            <a href="#" class="dropdown-item js-set-theme-auto">
+              <span>Automatic</span>
+            </a>
+          </div>
+        </li>
+        
+
+        
+        
+
       </ul>
+
     </div>
+  </nav>
+</header>
 
-    <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
-      
-      <li class="nav-item">
-        <a class="nav-link js-search" href="#"><i class="fas fa-search" aria-hidden="true"></i></a>
-      </li>
-      
-
-      
-      <li class="nav-item dropdown theme-dropdown">
-        <a href="#" class="nav-link js-theme-selector" data-toggle="dropdown" aria-haspopup="true">
-          <i class="fas fa-palette" aria-hidden="true"></i>
-        </a>
-        <div class="dropdown-menu">
-          <a href="#" class="dropdown-item js-set-theme-light">
-            <span>Light</span>
-          </a>
-          <a href="#" class="dropdown-item js-set-theme-dark">
-            <span>Dark</span>
-          </a>
-          <a href="#" class="dropdown-item js-set-theme-auto">
-            <span>Automatic</span>
-          </a>
-        </div>
-      </li>
-      
-
-      
-
-    </ul>
 
   </div>
-</nav>
 
+  <div class="page-body">
+    
+    
+    
 
-  <article class="article">
+    <article class="article">
 
   
+
 
 
 
@@ -581,8 +807,8 @@ Last weekend we held the bi-annual Stratosphere hackathon. It is a small traditi
   <div>
     
 
-  
-  <span>Maria Rigaki</span>
+  <span >
+      Maria Rigaki</span>
   </div>
   
   
@@ -609,26 +835,18 @@ Last weekend we held the bi-annual Stratosphere hackathon. It is a small traditi
   
   
   
+  
 
   
   
   <span class="middot-divider"></span>
   <span class="article-categories">
-    <i class="fas fa-folder mr-1"></i><a href="/categories/hackathon/">hackathon</a>, <a href="/categories/side-channels/">side-channels</a></span>
+    <i class="fas fa-folder mr-1"></i><a href="/category/hackathon/">hackathon</a>, <a href="/category/side-channels/">side-channels</a></span>
   
 
 </div>
 
     
-
-
-
-
-
-
-
-
-
 
 
 
@@ -649,7 +867,6 @@ Last weekend we held the bi-annual Stratosphere hackathon. It is a small traditi
 
 
 
-  
 
 
 
@@ -661,40 +878,22 @@ Last weekend we held the bi-annual Stratosphere hackathon. It is a small traditi
 
 
 
-<figure id="figure-our-hackathon-home">
 
 
-  <a data-fancybox="" href="/img/mala_upa.jpg" data-caption="Our hackathon home">
-
-
-  <img src="/img/mala_upa.jpg" alt=""  >
-</a>
-
-
-  
-  
-  <figcaption>
-    Our hackathon home
-  </figcaption>
-
-
-</figure>
+<figure  id="figure-our-hackathon-home">
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="mala_upa.jpg" alt="Our hackathon home" loading="lazy" data-zoomable /></div>
+  </div><figcaption>
+      Our hackathon home
+    </figcaption></figure>
 
 <h2 id="the-goal">The goal</h2>
 <p>For this year&rsquo;s event I decided that I wanted to work on something that I had not done before and step quite a lot out of my comfort zone. Ever since the Real World Crypto summer school that I attended this year in Croatia and the Side Channel Attacks (SCA) workshop, I&rsquo;ve been meaning to work on side channels. In addition I had not really used an oscilloscope before and that was an opportunity to learn more and get over the fear and mystery of hardware.</p>
-<p>Starting out, my goal for the hackathon was to learn how to use a USB based oscilloscope and use it in order to perform side channel attacks. The weapon of choice was a Picoscope 2204A 
-<a href="https://www.picotech.com/oscilloscope/2000/picoscope-2000-overview" target="_blank" rel="noopener">[1]</a> which was chosen based on the following criteria: a) it is a USB scope so it is easy to carry and works with my laptop, b) it is relatively reliable and while it is the entry level product of the series, it still is quite powerfull and c) it has software that runs in all platforms and more specifically Linux. This was crucial since I did not want to fiddle around with Windows or scopes that did not offer a good software solution including SDKs.</p>
+<p>Starting out, my goal for the hackathon was to learn how to use a USB based oscilloscope and use it in order to perform side channel attacks. The weapon of choice was a Picoscope 2204A <a href="https://www.picotech.com/oscilloscope/2000/picoscope-2000-overview" target="_blank" rel="noopener">[1]</a> which was chosen based on the following criteria: a) it is a USB scope so it is easy to carry and works with my laptop, b) it is relatively reliable and while it is the entry level product of the series, it still is quite powerfull and c) it has software that runs in all platforms and more specifically Linux. This was crucial since I did not want to fiddle around with Windows or scopes that did not offer a good software solution including SDKs.</p>
 <h2 id="side-channel-attack-sca">Side Channel Attack (SCA)</h2>
 <p>Side channel attacks are attacks that take advantage of information leakage that is not directly related to the function being attacked. For example, in cryptography you might have a cryptographic function such a smart card or other software that performs communication encryption. A side channel is using information such as power analysis, timing, electromagentic emanations, sound, etc to reveal secret keys instead of attacking the cryptographic algorithm itself.</p>
 <h2 id="a-timing-side-channel">A timing side-channel</h2>
-<p>I started first with a simple kind of SCA which is a timing attack against an insecure password implementation. I found a nice blog explaining timing side channel attacks in Arduino 
-<a href="http://eax64.github.io/2015/04/10/timing-attack-on-arduino.html" target="_blank" rel="noopener">[2]</a> and I used the arduino code provided there, as the vulnerable implementation to attack:
-
-
-
-
-
-  
+<p>I started first with a simple kind of SCA which is a timing attack against an insecure password implementation. I found a nice blog explaining timing side channel attacks in Arduino <a href="http://eax64.github.io/2015/04/10/timing-attack-on-arduino.html" target="_blank" rel="noopener">[2]</a> and I used the arduino code provided there, as the vulnerable implementation to attack:
 
 
 
@@ -706,24 +905,19 @@ Last weekend we held the bi-annual Stratosphere hackathon. It is a small traditi
 
 
 
-<figure id="figure-arduino-code-from-2">
 
 
-  <a data-fancybox="" href="/img/arduino_code.png" data-caption="Arduino code from [2]">
 
 
-  <img src="/img/arduino_code.png" alt=""  >
-</a>
 
 
-  
-  
-  <figcaption>
-    Arduino code from [2]
-  </figcaption>
 
-
-</figure>
+<figure  id="figure-arduino-code-from-2">
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="arduino_code.png" alt="Arduino code from [2]" loading="lazy" data-zoomable /></div>
+  </div><figcaption>
+      Arduino code from [2]
+    </figcaption></figure>
 </p>
 <p>The main idea is that you store a six digit password (or any length really) and you use the serial port to send a  candidate password to the Arduino. While the Arduino checks the password it turns on a LED that in essence corresponds to a digital pin set to ON. The password checking implementation looks at one digit at a time but it returns as soon as an incorrect digit is found. The fact that the response is not constant in time means that it leaks information about the validity of each digit, rendering the timing attack possible.
 Using the fact that the LED pin is turned on while the password check is perfomed, we can monitor the time that the PIN is on using the oscilloscope. The more digits that are correct, the longer the password checker takes and the longer the LED pin is on.</p>
@@ -733,7 +927,6 @@ Using the fact that the LED pin is turned on while the password check is perfome
 
 
 
-  
 
 
 
@@ -745,24 +938,14 @@ Using the fact that the LED pin is turned on while the password check is perfome
 
 
 
-<figure id="figure-first-three-correct-digits">
 
 
-  <a data-fancybox="" href="/img/three.png" data-caption="First three correct digits">
-
-
-  <img src="/img/three.png" alt=""  >
-</a>
-
-
-  
-  
-  <figcaption>
-    First three correct digits
-  </figcaption>
-
-
-</figure>
+<figure  id="figure-first-three-correct-digits">
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="three.png" alt="First three correct digits" loading="lazy" data-zoomable /></div>
+  </div><figcaption>
+      First three correct digits
+    </figcaption></figure>
 
 and when all 6 digits are correct:
 
@@ -770,7 +953,6 @@ and when all 6 digits are correct:
 
 
 
-  
 
 
 
@@ -782,24 +964,14 @@ and when all 6 digits are correct:
 
 
 
-<figure id="figure-all-digits-correct">
 
 
-  <a data-fancybox="" href="/img/six.png" data-caption="All digits correct">
-
-
-  <img src="/img/six.png" alt=""  >
-</a>
-
-
-  
-  
-  <figcaption>
-    All digits correct
-  </figcaption>
-
-
-</figure>
+<figure  id="figure-all-digits-correct">
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="six.png" alt="All digits correct" loading="lazy" data-zoomable /></div>
+  </div><figcaption>
+      All digits correct
+    </figcaption></figure>
 </p>
 <h2 id="using-the-picoscope">Using the Picoscope</h2>
 <p>The Picoscope is a USB oscilloscope that can be used for multiple purposes such as voltage measurement, spectrum analysis, serial channel decoding, etc. The interesting thing about USB scopes is that they come with powerful software that can perform advanced measurements and calculations which are usually quite expensive to get, or cost extra in bigger tabletop oscilloscopes.  Of course it all comes down to specifications such as sampling rates, bandwidth, number of channels and so on, but my impression so far is that you can get very good value for money with a good USB scope.</p>
@@ -807,9 +979,8 @@ and when all 6 digits are correct:
 <p>As the scope runs, it continuously gathers data until you stop it. This results in viewing everything on screen in real time but usually we want to &ldquo;freeze&rdquo; the scope when something of interest happens so that we can see it.  A <strong>trigger</strong> allows us to tell the scope when to start (and stop) capturing data and present them on screen. Triggers can be <em>single</em> (only triggers once) or <em>repeated</em> (when we capturing periodic events) and they come with a lot of settings such as <em>rising edge</em> or <em>falling edge</em>, etc. An example of a rising edge trigger is when we want the scope to start capturing when the voltage of a measurement goes from 0 to some higher value.</p>
 <p>The other function that I used a lot in this project was the <strong>measurement</strong> functionality. Since we want to measure the time for which the LED pin is on we can use the <em>high pulse width</em> type of measurement. The results appear as a line in the bottom of the window and it is visible in the previous two pictures.</p>
 <h2 id="using-the-pico-sdk-to-perform-the-attack">Using the Pico SDK to perform the attack</h2>
-<p>Since we can access the serial port we could always perform the attack programmatically, for example using pyserial. But where is the fun in that? 😄 Besides, I wanted to use the scope for the attack, since the fact that the serial port was used for input was just for illustration purposes. It could have been replaced just as easily with a bunch of buttons or some other way to provide input that is not directly measurable.</p>
-<p>It was also a great opportunity to learn how to use the SDK that comes with the Picoscope. After looking at the site for documentation I got to the Github link where all the SDK software can be found 
-<a href="https://github.com/picotech" target="_blank" rel="noopener">[3]</a>. A good number of languages is supported (C/C++, C#, Python, VB .NET, LabVIEW, MATLAB). For each language and each specific driver there is example code that helps to get started. Although the code is very well documented and the programming guide explains quite a few details, the task was not problem free.</p>
+<p>Since we can access the serial port we could always perform the attack programmatically, for example using pyserial. But where is the fun in that? &#x1f604; Besides, I wanted to use the scope for the attack, since the fact that the serial port was used for input was just for illustration purposes. It could have been replaced just as easily with a bunch of buttons or some other way to provide input that is not directly measurable.</p>
+<p>It was also a great opportunity to learn how to use the SDK that comes with the Picoscope. After looking at the site for documentation I got to the Github link where all the SDK software can be found <a href="https://github.com/picotech" target="_blank" rel="noopener">[3]</a>. A good number of languages is supported (C/C++, C#, Python, VB .NET, LabVIEW, MATLAB). For each language and each specific driver there is example code that helps to get started. Although the code is very well documented and the programming guide explains quite a few details, the task was not problem free.</p>
 <p>The first problem I faced was that I could not open the port and connect to the device. It turns out that there are two drivers for the 2000 series: the <strong>ps2000</strong> and the <strong>ps2000a</strong>. Although my device is called 2204A it actually did NOT use the <strong>ps2000a</strong> driver but the <strong>ps2000</strong> one. I found that out after going through some posts in the support forum that faced similar problems. Even though I knew now which example should be the correct one to try, I still could not connect to the device. It turned out that I needed to run the python script using <strong>sudo</strong> in order to open the connection!!!</p>
 <p>The second problem was to reproduce the settings that were working with the picoscope using the python code. The most straight forward approach here was to try and understand the different API calls and how they correspond to the software settings and then plot the screens using matplotlib in order to see the captured data.
 After fiddling quite a bit with the code I managed to produce something like the folllowing which is very close to what I could see in the picoscope software after providing the correct password:
@@ -818,7 +989,6 @@ After fiddling quite a bit with the code I managed to produce something like the
 
 
 
-  
 
 
 
@@ -830,24 +1000,14 @@ After fiddling quite a bit with the code I managed to produce something like the
 
 
 
-<figure id="figure-all-digits-correct-using-the-sdk">
 
 
-  <a data-fancybox="" href="/img/6_python.png" data-caption="All digits correct using the SDK">
-
-
-  <img src="/img/6_python.png" alt=""  >
-</a>
-
-
-  
-  
-  <figcaption>
-    All digits correct using the SDK
-  </figcaption>
-
-
-</figure>
+<figure  id="figure-all-digits-correct-using-the-sdk">
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="6_python.png" alt="All digits correct using the SDK" loading="lazy" data-zoomable /></div>
+  </div><figcaption>
+      All digits correct using the SDK
+    </figcaption></figure>
 </p>
 <h3 id="code-walkthrough">Code walkthrough</h3>
 <p>As a base I started with the Block code example that comes with the SDK.
@@ -866,8 +1026,7 @@ Steps:</p>
 <li>Stop the scope: <code>ps2000_stop()</code></li>
 <li>Close the scope: <code>ps2000_close_unit()</code></li>
 </ul>
-<p>Defining the trigger and the timebase were the most challenging parts for me, because the way some things are defined were not exactly similar to what I was seeing using the picoscope software. For example, the trigger threshold was set using ADC counts and not in voltage as it was on the software. The timebase was also tricky because it expects an integer value that is relative to the maximum timebase your device supports. After some calculations and a bit of trial and error, I managed to get to a point where my captured data corresponded to something I could use for the attack. The programming guide that explains the functions and their arguments in detail can be found here 
-<a href="https://www.picotech.com/download/manuals/picoscope-2000-series-programmers-guide.pdf" target="_blank" rel="noopener">[4]</a>.</p>
+<p>Defining the trigger and the timebase were the most challenging parts for me, because the way some things are defined were not exactly similar to what I was seeing using the picoscope software. For example, the trigger threshold was set using ADC counts and not in voltage as it was on the software. The timebase was also tricky because it expects an integer value that is relative to the maximum timebase your device supports. After some calculations and a bit of trial and error, I managed to get to a point where my captured data corresponded to something I could use for the attack. The programming guide that explains the functions and their arguments in detail can be found here <a href="https://www.picotech.com/download/manuals/picoscope-2000-series-programmers-guide.pdf" target="_blank" rel="noopener">[4]</a>.</p>
 <p>The following changes/additions were required for the timing attack:</p>
 <ul>
 <li>Open the serial port using pyserial.</li>
@@ -877,14 +1036,7 @@ Steps:</p>
 <li>Repeat for all possible digits (0&hellip;9).</li>
 <li>Repeat for all six digits of the password.</li>
 </ul>
-<p>The gist with all the code can be found here 
-<a href="https://gist.github.com/MariaRigaki/2d65a8a569cced23272beb7962d6654d" target="_blank" rel="noopener">[5]</a> and a screenshot of the ouptut can be seen here:
-
-
-
-
-
-  
+<p>The gist with all the code can be found here <a href="https://gist.github.com/MariaRigaki/2d65a8a569cced23272beb7962d6654d" target="_blank" rel="noopener">[5]</a> and a screenshot of the ouptut can be seen here:
 
 
 
@@ -896,33 +1048,28 @@ Steps:</p>
 
 
 
-<figure id="figure-all-digits-correct">
 
 
-  <a data-fancybox="" href="/img/terminal.png" data-caption="All digits correct">
 
 
-  <img src="/img/terminal.png" alt=""  >
-</a>
 
 
-  
-  
-  <figcaption>
-    All digits correct
-  </figcaption>
 
-
-</figure>
+<figure  id="figure-all-digits-correct">
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="terminal.png" alt="All digits correct" loading="lazy" data-zoomable /></div>
+  </div><figcaption>
+      All digits correct
+    </figcaption></figure>
 </p>
 <h2 id="summary">Summary</h2>
 <p>I really enjoyed this project and it turned out that this was a great fit for the hackathon as I managed to pull it off within the 24 hour period that we had for this. Before I started out, I had very little experience using an oscilloscope and I only watched some videos in Youtube in order to try and learn the basics. Now, I feel much more comfortable and I am looking forward to explore more capabilities of the scope. Hopefully I will be able to use it to perform other types of side channels. Stay tuned and as always if you have any questions or comments feel free to contact me!</p>
 <h2 id="links-and-references">Links and References</h2>
-<p>[1] <a href="https://www.picotech.com/oscilloscope/2000/picoscope-2000-overview">https://www.picotech.com/oscilloscope/2000/picoscope-2000-overview</a></p>
-<p>[2] <a href="http://eax64.github.io/2015/04/10/timing-attack-on-arduino.html">http://eax64.github.io/2015/04/10/timing-attack-on-arduino.html</a></p>
-<p>[3] <a href="https://github.com/picotech">https://github.com/picotech</a></p>
-<p>[4] <a href="https://www.picotech.com/download/manuals/picoscope-2000-series-programmers-guide.pdf">https://www.picotech.com/download/manuals/picoscope-2000-series-programmers-guide.pdf</a></p>
-<p>[5] <a href="https://gist.github.com/MariaRigaki/2d65a8a569cced23272beb7962d6654d">https://gist.github.com/MariaRigaki/2d65a8a569cced23272beb7962d6654d</a></p>
+<p>[1] <a href="https://www.picotech.com/oscilloscope/2000/picoscope-2000-overview" target="_blank" rel="noopener">https://www.picotech.com/oscilloscope/2000/picoscope-2000-overview</a></p>
+<p>[2] <a href="http://eax64.github.io/2015/04/10/timing-attack-on-arduino.html" target="_blank" rel="noopener">http://eax64.github.io/2015/04/10/timing-attack-on-arduino.html</a></p>
+<p>[3] <a href="https://github.com/picotech" target="_blank" rel="noopener">https://github.com/picotech</a></p>
+<p>[4] <a href="https://www.picotech.com/download/manuals/picoscope-2000-series-programmers-guide.pdf" target="_blank" rel="noopener">https://www.picotech.com/download/manuals/picoscope-2000-series-programmers-guide.pdf</a></p>
+<p>[5] <a href="https://gist.github.com/MariaRigaki/2d65a8a569cced23272beb7962d6654d" target="_blank" rel="noopener">https://gist.github.com/MariaRigaki/2d65a8a569cced23272beb7962d6654d</a></p>
 
     </div>
 
@@ -934,15 +1081,15 @@ Steps:</p>
 
 <div class="article-tags">
   
-  <a class="badge badge-light" href="/tags/oscilloscope/">oscilloscope</a>
+  <a class="badge badge-light" href="/tag/side-channels/">side-channels</a>
   
-  <a class="badge badge-light" href="/tags/side-channels/">side-channels</a>
+  <a class="badge badge-light" href="/tag/oscilloscope/">oscilloscope</a>
   
 </div>
 
 
 
-<div class="share-box" aria-hidden="true">
+<div class="share-box">
   <ul class="share">
     
       
@@ -952,8 +1099,12 @@ Steps:</p>
       
       
       
+      
+      
+      
+      
       <li>
-        <a href="https://twitter.com/intent/tweet?url=https://mariarigaki.github.io/post/summer-hacakathon-2019/&amp;text=Scoping%20it%20out!" target="_blank" rel="noopener" class="share-btn-twitter">
+        <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fmariarigaki.github.io%2Fpost%2Fsummer-hacakathon-2019%2F&amp;text=Scoping&#43;it&#43;out%21" target="_blank" rel="noopener" class="share-btn-twitter" aria-label="twitter">
           <i class="fab fa-twitter"></i>
         </a>
       </li>
@@ -965,8 +1116,12 @@ Steps:</p>
       
       
       
+      
+      
+      
+      
       <li>
-        <a href="https://www.facebook.com/sharer.php?u=https://mariarigaki.github.io/post/summer-hacakathon-2019/&amp;t=Scoping%20it%20out!" target="_blank" rel="noopener" class="share-btn-facebook">
+        <a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fmariarigaki.github.io%2Fpost%2Fsummer-hacakathon-2019%2F&amp;t=Scoping&#43;it&#43;out%21" target="_blank" rel="noopener" class="share-btn-facebook" aria-label="facebook">
           <i class="fab fa-facebook"></i>
         </a>
       </li>
@@ -978,8 +1133,14 @@ Steps:</p>
       
       
       
+      
+      
+      
+      
+        
+      
       <li>
-        <a href="mailto:?subject=Scoping%20it%20out!&amp;body=https://mariarigaki.github.io/post/summer-hacakathon-2019/" target="_blank" rel="noopener" class="share-btn-email">
+        <a href="mailto:?subject=Scoping%20it%20out%21&amp;body=https%3A%2F%2Fmariarigaki.github.io%2Fpost%2Fsummer-hacakathon-2019%2F" target="_blank" rel="noopener" class="share-btn-email" aria-label="envelope">
           <i class="fas fa-envelope"></i>
         </a>
       </li>
@@ -991,8 +1152,12 @@ Steps:</p>
       
       
       
+      
+      
+      
+      
       <li>
-        <a href="https://www.linkedin.com/shareArticle?url=https://mariarigaki.github.io/post/summer-hacakathon-2019/&amp;title=Scoping%20it%20out!" target="_blank" rel="noopener" class="share-btn-linkedin">
+        <a href="https://www.linkedin.com/shareArticle?url=https%3A%2F%2Fmariarigaki.github.io%2Fpost%2Fsummer-hacakathon-2019%2F&amp;title=Scoping&#43;it&#43;out%21" target="_blank" rel="noopener" class="share-btn-linkedin" aria-label="linkedin-in">
           <i class="fab fa-linkedin-in"></i>
         </a>
       </li>
@@ -1004,8 +1169,12 @@ Steps:</p>
       
       
       
+      
+      
+      
+      
       <li>
-        <a href="https://web.whatsapp.com/send?text=Scoping%20it%20out!%20https://mariarigaki.github.io/post/summer-hacakathon-2019/" target="_blank" rel="noopener" class="share-btn-whatsapp">
+        <a href="whatsapp://send?text=Scoping&#43;it&#43;out%21%20https%3A%2F%2Fmariarigaki.github.io%2Fpost%2Fsummer-hacakathon-2019%2F" target="_blank" rel="noopener" class="share-btn-whatsapp" aria-label="whatsapp">
           <i class="fab fa-whatsapp"></i>
         </a>
       </li>
@@ -1017,8 +1186,12 @@ Steps:</p>
       
       
       
+      
+      
+      
+      
       <li>
-        <a href="https://service.weibo.com/share/share.php?url=https://mariarigaki.github.io/post/summer-hacakathon-2019/&amp;title=Scoping%20it%20out!" target="_blank" rel="noopener" class="share-btn-weibo">
+        <a href="https://service.weibo.com/share/share.php?url=https%3A%2F%2Fmariarigaki.github.io%2Fpost%2Fsummer-hacakathon-2019%2F&amp;title=Scoping&#43;it&#43;out%21" target="_blank" rel="noopener" class="share-btn-weibo" aria-label="weibo">
           <i class="fab fa-weibo"></i>
         </a>
       </li>
@@ -1036,99 +1209,164 @@ Steps:</p>
 
 
 
-
+  
   
     
-    
-
-
-
-
-
-  
-
-
-  
-
-
-
-
-
-
 
 
 
 
   
-  
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
   </div>
 </article>
+  </div>
 
+  <div class="page-footer">
+    
+    
+    <div class="container">
+      <footer class="site-footer">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+
+
+<p class="powered-by">
+  
+  <a href="/tag/privacy/">Privacy</a>
+  
+  
+</p>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+  
+    
+  
+  
+    
+  
+
+  
+
+  
+  <p class="powered-by copyright-license-text">
+    © 2024 Me. This work is licensed under <a href="https://creativecommons.org/licenses/by-nc-nd/4.0" rel="noopener noreferrer" target="_blank">CC BY NC ND 4.0</a>
+  </p>
+  
+
+  <p class="powered-by footer-license-icons">
+    <a href="https://creativecommons.org/licenses/by-nc-nd/4.0" rel="noopener noreferrer" target="_blank" aria-label="Creative Commons">
+      <i class="fab fa-creative-commons fa-2x" aria-hidden="true"></i>
+      <i class="fab fa-creative-commons-by fa-2x" aria-hidden="true"></i>
       
-
-    
-    
-    
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
-
+        <i class="fab fa-creative-commons-nc fa-2x" aria-hidden="true"></i>
       
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/8.4.8/mermaid.min.js" integrity="sha256-lyWCDMnMeZiXRi7Zl54sZGKYmgQs4izcT7+tKc+KUBk=" crossorigin="anonymous" title="mermaid"></script>
       
-
+        <i class="fab fa-creative-commons-nd fa-2x" aria-hidden="true"></i>
       
-        
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js" integrity="sha256-eOgo0OtLL4cdq7RdwRUiGKLX9XsIJ7nGhWEKbohmVAQ=" crossorigin="anonymous"></script>
-        
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/languages/r.min.js"></script>
-        
+    </a>
+  </p>
+
+
+
+
+
+  <p class="powered-by">
+    
+    
+    
       
+      
+      
+      
+      
+      
+      Published with <a href="https://wowchemy.com/?utm_campaign=poweredby" target="_blank" rel="noopener">Wowchemy</a> — the free, <a href="https://github.com/wowchemy/wowchemy-hugo-themes" target="_blank" rel="noopener">open source</a> website builder that empowers creators.
+    
+  </p>
+</footer>
 
+    </div>
     
+  </div>
 
-    
-    
+  
 
-    
-    
-    <script>const code_highlighting = true;</script>
-    
 
-    
-    
-    <script>const isSiteThemeDark = true;</script>
-    
+<script src="/js/vendor-bundle.min.938a3a7554cd9f6602290411f64d2617.js"></script>
 
-    
-    
-    
-    
-    
-    
-    <script>
-      const search_config = {"indexURI":"/index.json","minLength":1,"threshold":0.3};
-      const i18n = {"no_results":"No results found","placeholder":"Search...","results":"results found"};
-      const content_type = {
-        'post': "Posts",
-        'project': "Projects",
-        'publication' : "Publications",
-        'talk' : "Talks"
-        };
-    </script>
-    
 
-    
-    
 
-    
-    
-    <script id="search-hit-fuse-template" type="text/x-template">
-      <div class="search-hit" id="summary-{{key}}">
+
+  
+
+  
+  
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script id="search-hit-fuse-template" type="text/x-template">
+    <div class="search-hit" id="summary-{{key}}">
       <div class="search-hit-content">
         <div class="search-hit-name">
           <a href="{{relpermalink}}">{{title}}</a>
@@ -1136,42 +1374,18 @@ Steps:</p>
           <p class="search-hit-description">{{snippet}}</p>
         </div>
       </div>
-      </div>
-    </script>
-    
+    </div>
+  </script>
+  
+    <script src="https://cdn.jsdelivr.net/gh/krisk/Fuse@v3.2.1/dist/fuse.min.js" integrity="sha512-o38bmzBGX+hD3JHWUFCDA09btWaqrNmoJ3RXLlrysA7PP01Kgs4UlE4MhelE1v5dJR3+cxlR4qQlotsW7jKsnw==" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/gh/julmot/mark.js@8.11.1/dist/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+  
 
-    
-    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
-    
 
-    
-    
 
-    
-    
 
-    
-    
 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-      
-    
-    
-    
-    
-    <script src="/js/academic.min.37431be2d92d7fb0160054761ab79602.js"></script>
 
-    
 
 
 
@@ -1180,31 +1394,52 @@ Steps:</p>
 
   
   
-  <div class="container">
-    <footer class="site-footer">
+  
+  
+  
+  
   
 
-  <p class="powered-by">
-    
 
-    Powered by the
-    <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
-    <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
 
-    
-    <span class="float-right" aria-hidden="true">
-      <a href="#" class="back-to-top">
-        <span class="button_icon">
-          <i class="fas fa-chevron-up fa-2x"></i>
-        </span>
-      </a>
-    </span>
-    
-  </p>
-</footer>
 
-  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script id="page-data" type="application/json">{"use_headroom":true}</script>
+
+
+  <script src="/js/wowchemy-headroom.db4755770454eb63685f8de785c0a172.js" type="module"></script>
+
+
+
+
+
+
+
+
+
   
+  
+
+
+<script src="/en/js/wowchemy.min.85070d5fe00d43eaedff44310b81dc2c.js"></script>
+
+
+
+
+
+
 
   
 <div id="modal" class="modal fade" role="dialog">
@@ -1217,7 +1452,8 @@ Steps:</p>
         </button>
       </div>
       <div class="modal-body">
-        <pre><code class="tex hljs"></code></pre>
+        
+        <pre><code></code></pre>
       </div>
       <div class="modal-footer">
         <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
@@ -1231,6 +1467,26 @@ Steps:</p>
     </div>
   </div>
 </div>
+
+
+  <script src="/js/wowchemy-publication.68f8d7090562ca65fc6d3cb3f8f2d2cb.js" type="module"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 </body>
 </html>

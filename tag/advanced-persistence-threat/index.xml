@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>advanced persistence threat | Maria Rigaki</title>
+    <link>https://mariarigaki.github.io/tag/advanced-persistence-threat/</link>
+      <atom:link href="https://mariarigaki.github.io/tag/advanced-persistence-threat/index.xml" rel="self" type="application/rss+xml" />
+    <description>advanced persistence threat</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Thu, 20 Jun 2019 11:56:27 +0200</lastBuildDate>
+    <image>
+      <url>https://mariarigaki.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png</url>
+      <title>advanced persistence threat</title>
+      <link>https://mariarigaki.github.io/tag/advanced-persistence-threat/</link>
+    </image>
+    
+    <item>
+      <title>Machete: Dissecting the Operations of a Cyber Espionage Group in Latin America</title>
+      <link>https://mariarigaki.github.io/publication/machete/machete/</link>
+      <pubDate>Thu, 20 Jun 2019 11:56:27 +0200</pubDate>
+      <guid>https://mariarigaki.github.io/publication/machete/machete/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Recent &amp; Upcoming Talks | Maria Rigaki</title>
+    <link>https://mariarigaki.github.io/event/</link>
+      <atom:link href="https://mariarigaki.github.io/event/index.xml" rel="self" type="application/rss+xml" />
+    <description>Recent &amp; Upcoming Talks</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Fri, 05 Nov 2021 15:00:00 +0200</lastBuildDate>
+    <image>
+      <url>https://mariarigaki.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png</url>
+      <title>Recent &amp; Upcoming Talks</title>
+      <link>https://mariarigaki.github.io/event/</link>
+    </image>
+    
+    <item>
+      <title>Stealing Malware Classification Models for Antivirus Evasion</title>
+      <link>https://mariarigaki.github.io/talk/stealing-malware-classification-models-for-antivirus-evasion/</link>
+      <pubDate>Fri, 05 Nov 2021 15:00:00 +0200</pubDate>
+      <guid>https://mariarigaki.github.io/talk/stealing-malware-classification-models-for-antivirus-evasion/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Forget me not: Malware Classification as a Continual Learning Problem</title>
+      <link>https://mariarigaki.github.io/talk/forget-me-not-malware-classification-as-a-continual-learning-problem/</link>
+      <pubDate>Thu, 31 Oct 2019 20:05:32 +0100</pubDate>
+      <guid>https://mariarigaki.github.io/talk/forget-me-not-malware-classification-as-a-continual-learning-problem/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Virus Bulletin 2019</title>
+      <link>https://mariarigaki.github.io/talk/virus-bulletin-2019/</link>
+      <pubDate>Fri, 04 Oct 2019 00:00:00 +0000</pubDate>
+      <guid>https://mariarigaki.github.io/talk/virus-bulletin-2019/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Arming Malware with GANs</title>
+      <link>https://mariarigaki.github.io/talk/arming-malware-with-gans/</link>
+      <pubDate>Sat, 07 Apr 2018 00:00:00 +0000</pubDate>
+      <guid>https://mariarigaki.github.io/talk/arming-malware-with-gans/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

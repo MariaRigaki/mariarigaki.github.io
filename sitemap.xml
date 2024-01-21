@@ -1,204 +1,208 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  
   <url>
-    <loc>https://mariarigaki.github.io/publication_types/3/</loc>
-    <lastmod>2022-04-14T13:32:25+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mariarigaki.github.io/authors/</loc>
-    <lastmod>2022-04-14T13:32:25+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mariarigaki.github.io/authors/maria-rigaki/</loc>
-    <lastmod>2022-04-14T13:32:25+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mariarigaki.github.io/</loc>
-    <lastmod>2022-04-14T13:32:25+02:00</lastmod>
-  </url>
-  
-  <url>
+    <loc>https://mariarigaki.github.io/publication-type/1/</loc>
+    <lastmod>2024-02-24T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://mariarigaki.github.io/tag/llm/</loc>
+    <lastmod>2024-02-24T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://mariarigaki.github.io/tag/network-security/</loc>
+    <lastmod>2024-02-24T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://mariarigaki.github.io/publication/out-cage/</loc>
+    <lastmod>2024-02-24T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
     <loc>https://mariarigaki.github.io/publication_types/</loc>
-    <lastmod>2022-04-14T13:32:25+02:00</lastmod>
-  </url>
-  
-  <url>
+    <lastmod>2024-02-24T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
     <loc>https://mariarigaki.github.io/publication/</loc>
-    <lastmod>2022-04-14T13:32:25+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mariarigaki.github.io/authors/sebastian-garcia/</loc>
-    <lastmod>2022-04-14T13:32:25+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mariarigaki.github.io/publication/model_extraction_malware/</loc>
-    <lastmod>2022-04-14T13:32:25+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mariarigaki.github.io/talk/</loc>
+    <lastmod>2024-02-24T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://mariarigaki.github.io/tag/red-team/</loc>
+    <lastmod>2024-02-24T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://mariarigaki.github.io/tag/reinforcement-learning/</loc>
+    <lastmod>2024-02-24T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://mariarigaki.github.io/tags/</loc>
+    <lastmod>2024-02-24T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://mariarigaki.github.io/publication-type/2/</loc>
+    <lastmod>2023-11-01T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://mariarigaki.github.io/publication/survey/</loc>
+    <lastmod>2023-11-01T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://mariarigaki.github.io/tag/machine-learning/</loc>
+    <lastmod>2023-11-01T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://mariarigaki.github.io/tag/privacy/</loc>
+    <lastmod>2023-11-01T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://mariarigaki.github.io/tag/malware/</loc>
+    <lastmod>2023-09-26T11:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://mariarigaki.github.io/tag/model-extraction/</loc>
+    <lastmod>2023-09-26T11:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://mariarigaki.github.io/publication/meme/</loc>
+    <lastmod>2023-09-26T11:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://mariarigaki.github.io/</loc>
+    <lastmod>2023-09-16T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://mariarigaki.github.io/tag/malware-detection/</loc>
+    <lastmod>2023-09-06T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://mariarigaki.github.io/tag/malware-evasion/</loc>
+    <lastmod>2023-09-06T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://mariarigaki.github.io/publication/malware-extraction/</loc>
+    <lastmod>2023-09-06T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://mariarigaki.github.io/event/</loc>
     <lastmod>2021-11-05T15:00:00+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mariarigaki.github.io/talk/cybersecai2021/</loc>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://mariarigaki.github.io/talk/stealing-malware-classification-models-for-antivirus-evasion/</loc>
     <lastmod>2021-11-05T15:00:00+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mariarigaki.github.io/publication/privacy-survey/</loc>
-    <lastmod>2020-07-17T17:34:16+02:00</lastmod>
-  </url>
-  
-  <url>
+    <changefreq>weekly</changefreq>
+  </url><url>
     <loc>https://mariarigaki.github.io/categories/</loc>
     <lastmod>2019-11-29T20:17:04+01:00</lastmod>
-  </url>
-  
-  <url>
+    <changefreq>weekly</changefreq>
+  </url><url>
     <loc>https://mariarigaki.github.io/post/hacking-nn-programmatically/</loc>
     <lastmod>2019-11-29T20:17:04+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mariarigaki.github.io/categories/machine-learning/</loc>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://mariarigaki.github.io/category/machine-learning/</loc>
     <lastmod>2019-11-29T20:17:04+01:00</lastmod>
-  </url>
-  
-  <url>
+    <changefreq>weekly</changefreq>
+  </url><url>
     <loc>https://mariarigaki.github.io/post/</loc>
     <lastmod>2019-11-29T20:17:04+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mariarigaki.github.io/categories/security/</loc>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://mariarigaki.github.io/category/security/</loc>
     <lastmod>2019-11-29T20:17:04+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mariarigaki.github.io/authors/elnaz-babayeva/</loc>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://mariarigaki.github.io/talk/forget-me-not-malware-classification-as-a-continual-learning-problem/</loc>
     <lastmod>2019-10-31T20:05:32+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mariarigaki.github.io/talk/cybersecai/</loc>
-    <lastmod>2019-10-31T20:05:32+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mariarigaki.github.io/authors/kamila-babayeva/</loc>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://mariarigaki.github.io/talk/virus-bulletin-2019/</loc>
     <lastmod>2019-10-09T19:56:55+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mariarigaki.github.io/authors/veronica-valeros/</loc>
-    <lastmod>2019-10-09T19:56:55+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mariarigaki.github.io/talk/virusb2019/</loc>
-    <lastmod>2019-10-09T19:56:55+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mariarigaki.github.io/categories/hackathon/</loc>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://mariarigaki.github.io/category/hackathon/</loc>
     <lastmod>2019-07-29T13:16:05+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mariarigaki.github.io/tags/oscilloscope/</loc>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://mariarigaki.github.io/tag/oscilloscope/</loc>
     <lastmod>2019-07-29T13:16:05+02:00</lastmod>
-  </url>
-  
-  <url>
+    <changefreq>weekly</changefreq>
+  </url><url>
     <loc>https://mariarigaki.github.io/post/summer-hacakathon-2019/</loc>
     <lastmod>2019-07-29T13:16:05+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mariarigaki.github.io/tags/side-channels/</loc>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://mariarigaki.github.io/tag/side-channels/</loc>
     <lastmod>2019-07-29T13:16:05+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mariarigaki.github.io/categories/side-channels/</loc>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://mariarigaki.github.io/category/side-channels/</loc>
     <lastmod>2019-07-29T13:16:05+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mariarigaki.github.io/tags/</loc>
-    <lastmod>2019-07-29T13:16:05+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mariarigaki.github.io/tags/advanced-persistence-threat/</loc>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://mariarigaki.github.io/tag/advanced-persistence-threat/</loc>
     <lastmod>2019-03-21T11:56:27+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mariarigaki.github.io/categories/conference-paper/</loc>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://mariarigaki.github.io/category/conference-paper/</loc>
     <lastmod>2019-03-21T11:56:27+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mariarigaki.github.io/tags/cyber-espionage/</loc>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://mariarigaki.github.io/tag/cyber-espionage/</loc>
     <lastmod>2019-03-21T11:56:27+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mariarigaki.github.io/publication/machete/</loc>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://mariarigaki.github.io/publication/machete/machete/</loc>
     <lastmod>2019-03-21T11:56:27+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mariarigaki.github.io/tags/malware-operations/</loc>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://mariarigaki.github.io/tag/malware-operations/</loc>
     <lastmod>2019-03-21T11:56:27+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mariarigaki.github.io/publication/gan-knife-fight/</loc>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://mariarigaki.github.io/slides/</loc>
+    <lastmod>2019-02-05T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://mariarigaki.github.io/slides/example/</loc>
+    <lastmod>2019-02-05T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://mariarigaki.github.io/publication/gan-fight/gan-knife-fight/</loc>
     <lastmod>2018-05-23T11:56:27+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mariarigaki.github.io/tags/gan/</loc>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://mariarigaki.github.io/tag/gan/</loc>
     <lastmod>2018-05-23T11:56:27+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mariarigaki.github.io/tags/intrusion-detection/</loc>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://mariarigaki.github.io/tag/intrusion-detection/</loc>
     <lastmod>2018-05-23T11:56:27+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mariarigaki.github.io/talk/arming/</loc>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://mariarigaki.github.io/talk/arming-malware-with-gans/</loc>
     <lastmod>2019-06-13T13:42:43+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://mariarigaki.github.io/tag/deep-learning/</loc>
+    <lastmod>2016-04-27T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://mariarigaki.github.io/tag/demo/</loc>
+    <lastmod>2016-04-27T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://mariarigaki.github.io/project/example/</loc>
+    <lastmod>2016-04-27T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://mariarigaki.github.io/project/external-project/</loc>
+    <lastmod>2016-04-27T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://mariarigaki.github.io/project/</loc>
+    <lastmod>2016-04-27T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://mariarigaki.github.io/admin/</loc>
+    <changefreq>weekly</changefreq>
   </url>
-  
-  <url>
-    <loc>https://mariarigaki.github.io/publication/master-thesis/</loc>
-    <lastmod>2017-07-06T11:43:05+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mariarigaki.github.io/tags/adversarial-ml/</loc>
-    <lastmod>2017-07-06T11:43:05+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mariarigaki.github.io/categories/thesis/</loc>
-    <lastmod>2017-07-06T11:43:05+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mariarigaki.github.io/authors/admin/</loc>
-  </url>
-  
 </urlset>
