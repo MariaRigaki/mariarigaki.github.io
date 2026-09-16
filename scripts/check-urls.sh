@@ -7,6 +7,17 @@ PUBLIC="${1:-public}"
 EXPECTED="$(dirname "$0")/expected-urls.txt"
 fail=0
 
+if [ ! -f "$EXPECTED" ]; then
+  echo "ERROR: expected URLs file not found: $EXPECTED" >&2
+  exit 1
+fi
+
+total=$(grep -cve '^\s*$' "$EXPECTED")
+if [ "$total" -eq 0 ]; then
+  echo "ERROR: $EXPECTED has no URLs to check" >&2
+  exit 1
+fi
+
 while IFS= read -r url; do
   [ -z "$url" ] && continue
   # A URL resolves if the path exists as a rendered page, or if some page
@@ -19,7 +30,6 @@ while IFS= read -r url; do
   fail=$((fail + 1))
 done < "$EXPECTED"
 
-total=$(grep -cve '^\s*$' "$EXPECTED")
 echo "----"
 echo "$((total - fail))/$total expected URLs resolve"
 [ "$fail" -eq 0 ] || echo "FAIL: $fail missing"

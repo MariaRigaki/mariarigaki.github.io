@@ -4,3 +4,5 @@ resources/
 node_modules/
 package-lock.json
 .pagefind/
+hugo_stats.json
+**/assets/jsconfig.json
