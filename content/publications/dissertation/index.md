@@ -11,6 +11,9 @@ featured: true
 links:
   - type: pdf
     url: /uploads/dissertation.pdf
+  - type: canonical
+    url: https://hdl.handle.net/10467/125424
+    label: CTU DSpace
 abstract: 'As artificial intelligence and machine learning become deeply embedded in security-critical systems, their dual-use nature raises questions about how these technologies can be used by adversaries. This thesis explores the offensive applications of machine learning and artificial intelligence in cybersecurity, focusing on how adversaries can exploit such technologies to evade detection and execute complex attacks. It addresses two complementary challenges: the evasion of malware detection systems and the use of large language models (LLMs) as autonomous planning agents in network security environments.
 
   The first part of the thesis investigates the evasion of static malware machine learning classifiers and antivirus engines through model extraction attacks. By leveraging active learning and transfer learning, surrogate models are constructed to approximate black-box target detectors under budget-constrained queries. These surrogates are then used to generate evasive malware samples that maintain functionality while bypassing detection. We introduce MEME, a novel algorithm that unifies model extraction and malware evasion into a single, efficient algorithm. We evaluate the ability of the surrogate models and MEME to evade several malware classifiers and AV products and demonstrate that attackers can produce evasive malware using query-efficient strategies.
