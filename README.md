@@ -223,6 +223,15 @@ Yes. No questions asked.
 
 ---
 
+## Maintenance
+
+Deployment runs via `.github/workflows/deploy.yml`, which pins its own `HUGO_VERSION`
+(currently `0.166.0`, matching `hugo_version` in `hugoblox.yaml`). The
+`.github/workflows/upgrade.yml` workflow (manual `workflow_dispatch` only) bumps the
+Hugo modules and theme to their latest versions when run — after running it, reconcile
+`HUGO_VERSION` in `deploy.yml` (and `hugo_version` in `hugoblox.yaml`) with whatever
+version it lands on, so the pins don't drift out of sync again.
+
 ## Community & Support
 
 - 💬 [**Discord**](https://discord.gg/z8wNYzb) — ask questions, share your site
