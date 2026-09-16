@@ -48,9 +48,6 @@ links:
     name: Documentation
     url: https://docs.hugoblox.com/guides/slides/
 
-# Link to your Markdown slides
-slides: "example"
-
 projects: []
 ---
 
@@ -249,8 +246,6 @@ Your slides are automatically:
 4. **Overview**: Press `ESC` to see all slides at once
 5. **Search**: Press `/` to search slide content
 6. **Zoom**: `Alt+Click` to zoom into details
-
-{{< button url="/slides/example/" text="Open Slides in New Tab" icon="external-link" style="ghost" new_tab="true" />}}
 
 ---
 
