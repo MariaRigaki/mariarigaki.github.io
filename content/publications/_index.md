@@ -2,6 +2,10 @@
 title: Publications
 cms_exclude: true
 
+aliases:
+  - /publication/
+  - /publication/master-thesis/
+
 # View.
 view: citation
 
