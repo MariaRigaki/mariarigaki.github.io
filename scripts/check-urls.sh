@@ -18,7 +18,7 @@ if [ "$total" -eq 0 ]; then
   exit 1
 fi
 
-while IFS= read -r url; do
+while IFS= read -r url || [ -n "$url" ]; do
   [ -z "$url" ] && continue
   # A URL resolves if the path exists as a rendered page, or if some page
   # declares it as an alias (Hugo renders aliases as redirect stubs).
